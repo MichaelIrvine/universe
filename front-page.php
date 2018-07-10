@@ -24,10 +24,11 @@ get_header();
 				$image = get_field('coming_soon_image');
 				?>
 				<div class="coming-soon-logo" style="background-image: url(<?php echo $logo; ?> )"></div>
-				<div class="coming-soon-image" style="background-image: url(<?php echo $image; ?> )"></div>
 				<div class="coming-soon-text">
 				<?php the_field('coming_soon_text'); ?>
 				</div>
+				<div class="coming-soon-image" style="background-image: url(<?php echo $image; ?> )"></div>
+
 			<?php	
 			}
 			?>
