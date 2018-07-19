@@ -20,18 +20,24 @@ get_header();
 		<section class="coming-soon">
 			<?php
 			if (function_exists('get_field')){
-				$logo = get_field('coming_soon_logo');
 				$image = get_field('coming_soon_image');
+				$logo  = get_field('coming_soon_logo');
 				?>
-				<div class="coming-soon-logo" style="background-image: url(<?php echo $logo; ?> )"></div>
-				<div class="coming-soon-text">
-				<?php the_field('coming_soon_text'); ?>
-				</div>
-				<div class="coming-soon-image" style="background-image: url(<?php echo $image; ?> )"></div>
 
+				<div class="coming-soon-image" style="background-image: url(<?php echo $image; ?> )"></div>
+				<div class="coming-soon-center">
+				<div class="coming-soon-logo">
+					<img src="<?php the_field('coming_soon_logo'); ?>" />
+				</div>
+				<div class="coming-soon-text-container">
+					<?php
+					echo the_field('coming_soon_text');
+					?>
+				</div>
 			<?php	
 			}
 			?>
+			</div>
 		</section>
 		</main><!-- #main -->
 	</div><!-- #primary -->

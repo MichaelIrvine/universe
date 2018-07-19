@@ -45,6 +45,7 @@ if ( ! function_exists( 'universe_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'universe' ),
+			'missing-links' => esc_html__( 'Missing Links', 'universe' )
 		) );
 
 		/*
@@ -113,6 +114,15 @@ function universe_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer', 'universe' ),
+		'id'            => 'footer',
+		'description'   => esc_html__( 'Add widgets here.', 'universe' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'universe_widgets_init' );
 
@@ -126,7 +136,13 @@ function universe_scripts() {
 
 	wp_enqueue_script( 'universe-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	// Google Font for Temporary Coming Soon Page
-	wp_enqueue_style('universe-googlefonts', "https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+	wp_enqueue_style('universe-googlefonts', "https://fonts.googleapis.com/css?family=Roboto");
+	// Jquery Enqueue
+	wp_enqueue_script('jquery');
+	// Waypoint Enqueue
+	wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri() . '/js/waypoints/lib/jquery.waypoints.min.js', array( 'jquery' ), '1.0', false );
+	// Main JS Enqueue
+	wp_enqueue_script( 'universe_script', get_stylesheet_directory_uri() . '/js/universe-script.js', array('jquery','waypoints'), '1.1', false );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -167,3 +183,44 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+
+/** 
+ * Font Awesome
+*/
+function loadFontAwesome() {
+
+    wp_enqueue_style( 'font-awesome-free', '//use.fontawesome.com/releases/v5.0.13/css/all.css' );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'loadFontAwesome' );
+
+/**
+ * SVG Support
+ */
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+/**
+ * Footer Details - Copyright & Dev Info
+ */
+if( function_exists('acf_add_options_page') ) {
+    $args = array(
+          'page_title' => 'Footer',
+		  'menu_title' => 'Footer',
+		  'menu_slug'  => 'footer',
+          'icon_url' => 'dashicons-edit'
+          //other args
+      );
+    acf_add_options_page($args);
+
+}
+
+/**
+ * Footer Newsletter Widget
+ */
+
