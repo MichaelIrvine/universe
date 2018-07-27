@@ -28,8 +28,16 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
-			the_custom_logo();
+			the_custom_logo();?>
+			<div class="mobile-logo">
 
+				<?php
+				$mobileLogo = get_field('mobile_logo', 'option');
+				echo '<img src="' . $mobileLogo['url'] . '" alt="' . $mobileLogo . '" />';
+				?>
+
+			</div>
+			<?php
 			$universe_description = get_bloginfo( 'description', 'display' );
 			if ( $universe_description || is_customize_preview() ) :
 				?>

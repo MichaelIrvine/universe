@@ -11,42 +11,71 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title" style="display:none">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<?php universe_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
-		the_content();
+						
+		if (function_exists( 'get_field' )){
+			if (get_field( 'new_post_image' )){?>
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'universe' ),
-			'after'  => '</div>',
-		) );
-		?>
+				<section class="post-image">
+					<?php
+					$image = get_field('new_post_image');
+					?>
+
+					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+				</section>
+			<?php 
+			}
+			}
+			?>
+
+			<?php
+			if (function_exists( 'get_field' )){
+			if (get_field( 'new_post_video' )){?>
+
+				<section class="post-embed-video">
+
+					<div class="embed-container">
+						<?php the_field('new_post_video'); ?>
+					</div>
+					<style>
+						.embed-container { 
+							position: relative; 
+							padding-bottom: 56.25%;
+							overflow: hidden;
+							max-width: 100%;
+							height: auto;
+						} 
+
+						.embed-container iframe,
+						.embed-container object,
+						.embed-container embed { 
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+						}
+					</style>
+
+				</section>
+			<?php 
+			}
+			}
+			?>
+
+
+
+
+		
+
 	</div><!-- .entry-content -->
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'universe' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
 		</footer><!-- .entry-footer -->
-	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -22,8 +22,11 @@
 		?>
 
 	</div>
-	<div class="missing-links">
-		<h3>Missing Links</h3>
+	<div class="missing-links-container">
+		
+		<?php
+		if (!is_page('missing-links') ) : ?>
+		
 		<?php
 		if( have_rows('missing_links', 'option') ): 
 		while( have_rows('missing_links', 'option') ): the_row();
@@ -31,9 +34,12 @@
 			
 			 <p><a href="<?php the_sub_field('missing_link_url');?>"> 
 				 <?php the_sub_field('missing_link_title', 'option');?>
+				 
 			</a></p>
+			<?php the_sub_field('missing_link_extra', 'option');?>
 		<?php 
 		endwhile; 
+		endif;
 		endif;
 		?>
 	</div> <!-- missing links -->
@@ -69,6 +75,12 @@
 		?>
 	</div> <!-- developer info -->
 	</div> <!-- footer bottom container -->
+
+	<div class="scrollup">
+		<a href="#" class="scroll-to-top">
+			<i class="fas fa-chevron-up"></i>
+		</a>
+	</div>
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->

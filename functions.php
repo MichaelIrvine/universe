@@ -140,9 +140,13 @@ function universe_scripts() {
 	// Jquery Enqueue
 	wp_enqueue_script('jquery');
 	// Waypoint Enqueue
-	wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri() . '/js/waypoints/lib/jquery.waypoints.min.js', array( 'jquery' ), '1.0', false );
+	// wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri() . '/js/waypoints/lib/jquery.waypoints.min.js', array( 'jquery' ), '1.0', false );
 	// Main JS Enqueue
 	wp_enqueue_script( 'universe_script', get_stylesheet_directory_uri() . '/js/universe-script.js', array('jquery','waypoints'), '1.1', false );
+	// Scroll to top JS
+	wp_enqueue_script( 'scroll_up', get_stylesheet_directory_uri() . '/js/scroll-top.js', array('jquery'), '1.1', false );
+	// Missing Links - Jump to ID
+	wp_enqueue_script( 'jump_link', get_stylesheet_directory_uri() . '/js/jump-link.js', array('jquery'), '1.1', false );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -221,6 +225,16 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 /**
- * Footer Newsletter Widget
+ * Mobile Logo
  */
+if( function_exists('acf_add_options_page') ) {
+    $args = array(
+          'page_title' => 'Mobile Logo',
+		  'menu_title' => 'Mobile Logo',
+		  'menu_slug'  => 'mobile_logo',
+          'icon_url' => 'dashicons-format-image'
+          //other args
+      );
+    acf_add_options_page($args);
 
+}
