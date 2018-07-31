@@ -29,13 +29,11 @@
 		
 		<?php
 		if( have_rows('missing_links', 'option') ): 
-		while( have_rows('missing_links', 'option') ): the_row();
-			?>
-			
-			 <p><a href="<?php the_sub_field('missing_link_url');?>"> 
+		while( have_rows('missing_links', 'option') ): the_row();?>
+			<p><a href="<?php the_sub_field('missing_link_url');?>" class="ml-link" data-ml-item="ml-menu-item"> 
 				 <?php the_sub_field('missing_link_title', 'option');?>
-				 
-			</a></p>
+				 </a>
+			</p>
 			<?php the_sub_field('missing_link_extra', 'option');?>
 		<?php 
 		endwhile; 

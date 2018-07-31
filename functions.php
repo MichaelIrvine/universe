@@ -142,7 +142,7 @@ function universe_scripts() {
 	// Waypoint Enqueue
 	// wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri() . '/js/waypoints/lib/jquery.waypoints.min.js', array( 'jquery' ), '1.0', false );
 	// Main JS Enqueue
-	wp_enqueue_script( 'universe_script', get_stylesheet_directory_uri() . '/js/universe-script.js', array('jquery','waypoints'), '1.1', false );
+	wp_enqueue_script( 'universe_script', get_stylesheet_directory_uri() . '/js/universe-script.js', array('jquery'), '1.1', false );
 	// Scroll to top JS
 	wp_enqueue_script( 'scroll_up', get_stylesheet_directory_uri() . '/js/scroll-top.js', array('jquery'), '1.1', false );
 	// Missing Links - Jump to ID

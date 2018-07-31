@@ -1,0 +1,29 @@
+header {
+
+    display: flex;
+
+    .site-branding {
+        display: flex;
+        flex-grow: 1;
+        
+        .custom-logo-link {
+            width: 60%;
+            padding: 1em;
+
+            @media screen and ( max-width: 700px ){
+            display: none;
+            }
+        }
+
+        .mobile-logo {
+            display: none;
+            padding: 1em;
+
+            @media screen and ( max-width: 700px ){
+            display: block;
+            }
+        }
+    } // .site-branding
+
+} // Header
+

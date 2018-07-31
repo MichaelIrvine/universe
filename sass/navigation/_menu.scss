@@ -1,0 +1,53 @@
+
+
+// Header Navigation
+.main-navigation {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 1em;
+
+    .menu-primary-menu-container {
+
+        ul.menu {
+            // reset
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        
+            li {
+                padding: 1em;
+            
+                a {
+                    text-decoration: none;
+                    color: #000;
+                    font-family: $font__main;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+}
+
+// Sub Navigation
+
+.menu-item-has-children {
+    position: relative;
+
+    a {
+        cursor: pointer;
+    }
+
+    .sub-menu {
+        -webkit-padding-start: 0px;
+        list-style: none;
+        position: absolute;
+        display: none;
+    }
+
+    .is-visible {
+        display: flex;
+    }
+
+}
