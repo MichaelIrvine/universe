@@ -443,6 +443,13 @@ table {
   z-index: 9999;
   width: 32px;
   height: 32px; }
+  .scroll-to-top .fas {
+    color: #000; }
+
+.newsletter {
+  width: 60%; }
+  .newsletter .widget_newsletterwidget .tnp form {
+    display: flex; }
 
 /*--------------------------------------------------------------
 # Forms
@@ -543,17 +550,33 @@ a {
   justify-content: flex-end;
   width: 100%;
   padding: 1em; }
+  @media screen and (max-width: 601px) {
+    .main-navigation {
+      justify-content: center; } }
   .main-navigation .menu-primary-menu-container ul.menu {
     list-style: none;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    margin-top: 0;
+    -webkit-padding-start: 0px; }
     .main-navigation .menu-primary-menu-container ul.menu li {
       padding: 1em; }
       .main-navigation .menu-primary-menu-container ul.menu li a {
         text-decoration: none;
         color: #000;
         font-family: "Roboto", sans-serif;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        font-size: 1.2em;
+        font-weight: 300;
+        letter-spacing: 2px; }
+        @media screen and (max-width: 601px) {
+          .main-navigation .menu-primary-menu-container ul.menu li a {
+            font-size: 1em; } }
+        @media screen and (max-width: 500px) {
+          .main-navigation .menu-primary-menu-container ul.menu li a {
+            font-size: 0.75em; } }
+        .main-navigation .menu-primary-menu-container ul.menu li a:hover li {
+          background-color: lightgray; }
 
 .menu-item-has-children {
   position: relative; }
@@ -563,10 +586,14 @@ a {
     -webkit-padding-start: 0px;
     list-style: none;
     position: absolute;
+    left: 0;
     display: none; }
   .menu-item-has-children .is-visible {
     display: flex; }
 
+  /* --------------------
+# Missing Links Contact Reveal
+------------------------ */
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -831,23 +858,80 @@ object {
 --------------------------------------------------------------*/
 header {
   display: flex; }
+  @media screen and (max-width: 601px) {
+    header {
+      flex-direction: column; } }
   header .site-branding {
-    display: flex;
-    flex-grow: 1; }
+    display: flex; }
+    @media screen and (max-width: 601px) {
+      header .site-branding {
+        justify-content: center; } }
     header .site-branding .custom-logo-link {
-      width: 60%;
-      padding: 1em; }
+      width: 250px;
+      padding: 1em;
+      padding-left: 2em; }
       @media screen and (max-width: 700px) {
         header .site-branding .custom-logo-link {
           display: none; } }
     header .site-branding .mobile-logo {
       display: none;
-      padding: 1em; }
+      padding: 1em;
+      min-width: 50px; }
       @media screen and (max-width: 700px) {
         header .site-branding .mobile-logo {
           display: block; } }
 
-  /* --------------------
+footer {
+  display: flex;
+  flex-direction: column; }
+
+.footer-logo-small {
+  align-self: center; }
+
+.missing-links-container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .missing-links-container .ml-link {
+    text-decoration: none;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-weight: 300; }
+
+a.ml-link:hover {
+  border-bottom: 1px solid #000; }
+
+.footer-bottom-container {
+  display: flex;
+  justify-content: center;
+  background-color: #000000; }
+  .footer-bottom-container .copyright-info p {
+    color: #FFF;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 1px; }
+  .footer-bottom-container .developer-info {
+    margin-left: 1em; }
+    .footer-bottom-container .developer-info p {
+      color: #FFF;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      font-size: 0.75em;
+      letter-spacing: 1px; }
+      .footer-bottom-container .developer-info p a {
+        text-decoration: none;
+        color: #FFF;
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px; }
+
+/* --------------------
 # Missing Links Contact Reveal
 ------------------------ */
 .wpcf7 {

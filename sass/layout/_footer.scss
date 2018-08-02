@@ -1,4 +1,85 @@
-  /* --------------------
+
+// Footer 
+// 
+// 
+footer {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.footer-logo-small {
+  align-self: center;
+}
+
+.missing-links-container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .ml-link {
+    text-decoration: none;
+    color: #000;
+    font-family: $font__main;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-weight: 300;
+  }
+
+}
+
+a.ml-link:hover {
+  // text-decoration: underline;
+  border-bottom: 1px solid #000;
+}
+
+
+
+
+
+.footer-bottom-container {
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+
+    .copyright-info {
+
+      p {
+        color: #FFF;
+        font-family: $font__main;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        letter-spacing: 1px;
+      }
+    }
+
+    .developer-info {
+      margin-left: 1em;
+
+      p {
+        color: #FFF;
+        font-family: $font__main;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        letter-spacing: 1px;
+
+        a{
+          text-decoration: none;
+          color: #FFF;
+          font-family: $font__main;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
+    }
+}
+
+
+
+/* --------------------
 # Missing Links Contact Reveal
 ------------------------ */
 

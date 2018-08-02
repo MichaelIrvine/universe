@@ -29,18 +29,21 @@
 		
 		<?php
 		if( have_rows('missing_links', 'option') ): 
+			$i = 0;
 		while( have_rows('missing_links', 'option') ): the_row();?>
-			<p><a href="<?php the_sub_field('missing_link_url');?>" class="ml-link" data-ml-item="ml-menu-item"> 
-				 <?php the_sub_field('missing_link_title', 'option');?>
-				 </a>
-			</p>
+			<a href="<?php the_sub_field('missing_link_url');?>" class="ml-link<?php $i++; ?>" data-ml-item="ml-menu-item"> 
+				<?php the_sub_field('missing_link_title', 'option');?>
+			</a>
 			<?php the_sub_field('missing_link_extra', 'option');?>
 		<?php 
 		endwhile; 
 		endif;
 		endif;
 		?>
+
 	</div> <!-- missing links -->
+
+
 
 	<div class="newsletter">
 		<?php dynamic_sidebar('footer'); ?> 

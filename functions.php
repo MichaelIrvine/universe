@@ -135,12 +135,10 @@ function universe_scripts() {
 	wp_enqueue_script( 'universe-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'universe-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	// Google Font for Temporary Coming Soon Page
-	wp_enqueue_style('universe-googlefonts', "https://fonts.googleapis.com/css?family=Roboto");
+	// Google Font
+	wp_enqueue_style('universe-googlefonts', "https://fonts.googleapis.com/css?family=Roboto:300,400,500");
 	// Jquery Enqueue
 	wp_enqueue_script('jquery');
-	// Waypoint Enqueue
-	// wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri() . '/js/waypoints/lib/jquery.waypoints.min.js', array( 'jquery' ), '1.0', false );
 	// Main JS Enqueue
 	wp_enqueue_script( 'universe_script', get_stylesheet_directory_uri() . '/js/universe-script.js', array('jquery'), '1.1', false );
 	// Scroll to top JS

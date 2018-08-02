@@ -5,11 +5,12 @@ jQuery(document).ready(function($) {
   // -- Variables for menu navigation
   const subMenu = $(".sub-menu");
   const subMenuButton = $(".menu-item-has-children a");
-  console.log(subMenuButton);
 
     subMenuButton.click(function () {
-        // console.log('clkk');
         subMenu.toggleClass("is-visible");
+      setTimeout(function () {
+        subMenu.removeClass("is-visible");
+      }, 5000);
     });
 
   // --- Check page URL -- Display Sub Menu if URL Matches
@@ -21,18 +22,17 @@ jQuery(document).ready(function($) {
     subMenuButton.off('click');
   }
 
+
+
   /* --------------------
 # Missing Links - Contact reveal
 ------------------------ */
-const contactButton = $('.ml-link0');
+const mlButton = $('a.ml-link:nth-child(2)');
+console.log(mlButton);
 
-contactButton.click(function(e){
+mlButton.click(function(e){
     e.preventDefault();
     $('.wpcf7').slideToggle("slow");
 });
-
-    const ml = $('a[data-ml-item="ml-menu-item"]');
-
-    console.log(ml);
 
 });
