@@ -29,9 +29,8 @@
 		
 		<?php
 		if( have_rows('missing_links', 'option') ): 
-			$i = 0;
 		while( have_rows('missing_links', 'option') ): the_row();?>
-			<a href="<?php the_sub_field('missing_link_url');?>" class="ml-link<?php $i++; ?>" data-ml-item="ml-menu-item"> 
+			<a href="<?php the_sub_field('missing_link_url');?>" class="ml-link" data-ml-item="ml-menu-item"> 
 				<?php the_sub_field('missing_link_title', 'option');?>
 			</a>
 			<?php the_sub_field('missing_link_extra', 'option');?>
@@ -55,7 +54,11 @@
 		<?php
 	if( function_exists('get_field') ){
 		if( get_field('copyright_info', 'option') ){
-			echo '<p class="footer-copyright">&copy;'; the_field('copyright_info', 'option'); echo '</p>';
+			echo '<p class="footer-copyright">&copy;'; 
+			the_field('copyright_date', 'option');echo '</p>';
+			echo '<p>';
+			the_field('copyright_info', 'option'); 
+			echo '</p>';
 		}
 
 	}
@@ -67,7 +70,7 @@
 		while( have_rows('developer_info', 'option') ): the_row();
 			?>
 			
-			 <p class="developer-info">Website by: <a href="<?php the_sub_field('developer_website');?>"> 
+			 <p class="developer-info-text">Website by: <a href="<?php the_sub_field('developer_website');?>"> 
 				 <?php the_sub_field('developer_name', 'option');?>
 			</a></p>
 		<?php 

@@ -1,0 +1,22 @@
+.about-copy {
+    display: flex;
+    justify-content: center;
+
+    .about-text {
+        display: flex;
+        width: 75%;
+        padding: 2em;
+
+        @media screen and ( max-width: 520px ){
+            width: 88%;
+        }
+
+        p {
+        font-family: $font__main;
+        font-size: 1em;
+        font-weight: 400;
+        letter-spacing: 1px;
+        -webkit-font-smoothing: antialiased;
+        }
+    }
+}

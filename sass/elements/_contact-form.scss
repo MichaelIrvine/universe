@@ -1,0 +1,102 @@
+/* --------------------
+# Missing Links Contact Reveal
+------------------------ */
+
+.wpcf7 {
+  display: none;
+  width: 100%;
+
+  .wpcf7-form {
+    
+    width: 70%;
+    margin: 0 auto;
+
+    @media screen and ( max-width: 700px ){
+    width: 80%;
+
+    }
+
+    p {
+    
+    input.first-name {
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 3%;
+
+    @media screen and ( max-width: 815px ){
+    width: 100%;
+    margin-right: 0;
+    }
+
+    &:active,
+	&:focus {
+    border-bottom: 1px solid #000;
+    outline: none;
+	}
+    }
+
+    input.last-name {
+    width: 48%;
+    margin-left: 2%;
+    margin-bottom: 3%;
+
+    @media screen and ( max-width: 815px ){
+    width: 100%;
+    margin-left: 0;
+
+    }
+    &:active,
+	&:focus {
+    border-bottom: 1px solid #000;
+    outline: none;
+	    }    
+    }
+
+    input.email {
+    width: 100%;
+    margin-bottom: 3%;
+    
+    &:active,
+	&:focus {
+    border-bottom: 1px solid #000;
+    outline: none;
+	    }    
+    }
+
+    textarea.wpcf7-textarea {
+    margin-bottom: 3%;
+    
+    &:active,
+	&:focus {
+    border-bottom: 1px solid #000;
+    outline: none;
+	    }
+    }
+
+    input.wpcf7-submit {
+    cursor: pointer;
+	border-radius: 0px;
+	background: #000000;
+	color: #ffffff;
+    font-family: $font__main;
+    font-size: 1em;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 1em;
+    width: 140px;
+    text-align: center;
+    position: relative;
+    left: calc(50% - 140px/2);
+
+
+    &:active,
+    &:focus {
+		outline: 1px dotted #000;
+	}
+
+    }
+    }
+
+  }
+}
+

@@ -1,12 +1,78 @@
 .newsletter {
-    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin: 5em 1em;
 
-    .widget_newsletterwidget {
+    .widget_text {
+        width: 100%;
 
-        .tnp {
-            form {
+        .textwidget {
+
+            .tnp {
+                max-width: 100%;
+                // margin: 0px;
                 display: flex;
+                justify-content: center;
+                
 
+
+                form {
+                    display: flex;
+                    justify-content: center;
+                    width: 60%;
+
+                        @media screen and ( max-width: 645px ){
+                        flex-direction: column;
+                        }                    
+
+                    .tnp-field-email {
+                        width: auto;
+
+                        input.tnp-email {
+                            outline: none;
+                            height: auto;
+                            box-sizing: border-box;
+                            border-radius: 0px; 
+                            width: 465px;
+                                
+                            @media screen and ( max-width: 645px ){
+                            width: 100%;
+                            }
+                            
+                        }
+
+                        .tnp-email:focus {
+                            border-bottom: 1px solid #000;
+                        }
+
+                        .tnp-email::placeholder {
+                            font-style: italic; 
+                        }
+                    }
+
+                    .tnp-field-button {
+                        width: auto;
+                            
+                        @media screen and ( max-width: 645px ){
+                        align-self: flex-end;
+                        }                        
+
+                        input.tnp-submit {
+                            background-color: #000;
+                            border: 0px;
+                            width: 100px;
+                            cursor: pointer;
+                            font-style: italic;
+                            
+
+
+                            &:focus {
+                                outline: 1px dotted #000;
+                            }
+                        }
+
+                    }
+                }
             }
         }
     }

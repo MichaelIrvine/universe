@@ -18,6 +18,9 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 3em;
+  margin-bottom: 2em;
+  width: 80%;
 
   .ml-link {
     text-decoration: none;
@@ -27,13 +30,19 @@ footer {
     font-size: 1.2em;
     letter-spacing: 2px;
     font-weight: 300;
+    line-height: 1.5;
+    padding-top: 0.8em;
+    margin: 0.1em;
   }
 
 }
 
+.ml-link.text-color {
+  color: #d0d0d0;
+}
+
 a.ml-link:hover {
-  // text-decoration: underline;
-  border-bottom: 1px solid #000;
+  text-decoration: underline;
 }
 
 
@@ -42,34 +51,52 @@ a.ml-link:hover {
 
 .footer-bottom-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background-color: #000000;
 
     .copyright-info {
+      display: flex;
+      justify-content: center;
+      width: 25%;
+      margin: 20px auto 0;
+
 
       p {
         color: #FFF;
         font-family: $font__main;
         text-transform: uppercase;
-        font-size: 0.75em;
+        font-size: 0.5em;
+        font-style: italic;
         letter-spacing: 1px;
+        margin-right: 1em;
+
+        
       }
+
     }
 
     .developer-info {
-      margin-left: 1em;
+      width: 25%;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: center;
+
 
       p {
         color: #FFF;
         font-family: $font__main;
         text-transform: uppercase;
-        font-size: 0.75em;
+        font-size: 0.5em;
+        font-style: italic;
         letter-spacing: 1px;
 
         a{
           text-decoration: none;
           color: #FFF;
           font-family: $font__main;
+          font-size: 0.5em;
+          font-style: italic;
           text-transform: uppercase;
           letter-spacing: 1px;
         }
@@ -79,10 +106,3 @@ a.ml-link:hover {
 
 
 
-/* --------------------
-# Missing Links Contact Reveal
------------------------- */
-
-.wpcf7 {
-    display: none;
-}

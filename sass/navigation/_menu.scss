@@ -5,7 +5,7 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    padding: 1em;
+    margin-right: 1em;
 
         @media screen and ( max-width: 601px ){
         justify-content: center;
@@ -13,18 +13,19 @@
 
     .menu-primary-menu-container {
        
-
         ul.menu {
             // reset
             list-style: none;
             display: flex;
-            justify-content: space-between;
             margin-top: 0;
             -webkit-padding-start: 0px;
 
-        
             li {
                 padding: 1em;
+                width: auto;
+
+
+                &:hover {background-color: hsl(0, 0%, 97%);}
             
                 a {
                     text-decoration: none;
@@ -44,9 +45,11 @@
                     font-size: 0.75em;
                     }
 
-                    &:hover li {background-color: lightgray;}
                 }
             }
+
+            li:hover a {color: hsl(0, 0%, 10%);}
+
         }
     }
 
@@ -67,6 +70,7 @@
         position: absolute;
         left: 0;
         display: none;
+        margin-top: 10px;
     }
 
     .is-visible {

@@ -21,18 +21,19 @@ jQuery(document).ready(function($) {
     subMenu.addClass("is-visible");
     subMenuButton.off('click');
   }
-
-
-
-  /* --------------------
+/* --------------------
 # Missing Links - Contact reveal
 ------------------------ */
-const mlButton = $('a.ml-link:nth-child(2)');
-console.log(mlButton);
+const mlLinks     = $('a.ml-link');
+const contactBtn  = $('a.ml-link:nth-child(2)');
+const contactForm = $('.wpcf7');
 
-mlButton.click(function(e){
+contactBtn.click(function(e){
     e.preventDefault();
-    $('.wpcf7').slideToggle("slow");
+    mlLinks.toggleClass('text-color');
+    contactForm.slideToggle('slow');
+    
 });
+
 
 });

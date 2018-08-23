@@ -447,9 +447,128 @@ table {
     color: #000; }
 
 .newsletter {
-  width: 60%; }
-  .newsletter .widget_newsletterwidget .tnp form {
-    display: flex; }
+  display: flex;
+  justify-content: center;
+  margin: 5em 1em; }
+  .newsletter .widget_text {
+    width: 100%; }
+    .newsletter .widget_text .textwidget .tnp {
+      max-width: 100%;
+      display: flex;
+      justify-content: center; }
+      .newsletter .widget_text .textwidget .tnp form {
+        display: flex;
+        justify-content: center;
+        width: 60%; }
+        @media screen and (max-width: 645px) {
+          .newsletter .widget_text .textwidget .tnp form {
+            flex-direction: column; } }
+        .newsletter .widget_text .textwidget .tnp form .tnp-field-email {
+          width: auto; }
+          .newsletter .widget_text .textwidget .tnp form .tnp-field-email input.tnp-email {
+            outline: none;
+            height: auto;
+            box-sizing: border-box;
+            border-radius: 0px;
+            width: 465px; }
+            @media screen and (max-width: 645px) {
+              .newsletter .widget_text .textwidget .tnp form .tnp-field-email input.tnp-email {
+                width: 100%; } }
+          .newsletter .widget_text .textwidget .tnp form .tnp-field-email .tnp-email:focus {
+            border-bottom: 1px solid #000; }
+          .newsletter .widget_text .textwidget .tnp form .tnp-field-email .tnp-email::placeholder {
+            font-style: italic; }
+        .newsletter .widget_text .textwidget .tnp form .tnp-field-button {
+          width: auto; }
+          @media screen and (max-width: 645px) {
+            .newsletter .widget_text .textwidget .tnp form .tnp-field-button {
+              align-self: flex-end; } }
+          .newsletter .widget_text .textwidget .tnp form .tnp-field-button input.tnp-submit {
+            background-color: #000;
+            border: 0px;
+            width: 100px;
+            cursor: pointer;
+            font-style: italic; }
+            .newsletter .widget_text .textwidget .tnp form .tnp-field-button input.tnp-submit:focus {
+              outline: 1px dotted #000; }
+
+.post-embed-video .embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto; }
+.post-embed-video .embed-container iframe,
+.post-embed-video .embed-container object,
+.post-embed-video .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* --------------------
+# Missing Links Contact Reveal
+------------------------ */
+.wpcf7 {
+  display: none;
+  width: 100%; }
+  .wpcf7 .wpcf7-form {
+    width: 70%;
+    margin: 0 auto; }
+    @media screen and (max-width: 700px) {
+      .wpcf7 .wpcf7-form {
+        width: 80%; } }
+    .wpcf7 .wpcf7-form p input.first-name {
+      width: 48%;
+      margin-right: 2%;
+      margin-bottom: 3%; }
+      @media screen and (max-width: 815px) {
+        .wpcf7 .wpcf7-form p input.first-name {
+          width: 100%;
+          margin-right: 0; } }
+      .wpcf7 .wpcf7-form p input.first-name:active, .wpcf7 .wpcf7-form p input.first-name:focus {
+        border-bottom: 1px solid #000;
+        outline: none; }
+    .wpcf7 .wpcf7-form p input.last-name {
+      width: 48%;
+      margin-left: 2%;
+      margin-bottom: 3%; }
+      @media screen and (max-width: 815px) {
+        .wpcf7 .wpcf7-form p input.last-name {
+          width: 100%;
+          margin-left: 0; } }
+      .wpcf7 .wpcf7-form p input.last-name:active, .wpcf7 .wpcf7-form p input.last-name:focus {
+        border-bottom: 1px solid #000;
+        outline: none; }
+    .wpcf7 .wpcf7-form p input.email {
+      width: 100%;
+      margin-bottom: 3%; }
+      .wpcf7 .wpcf7-form p input.email:active, .wpcf7 .wpcf7-form p input.email:focus {
+        border-bottom: 1px solid #000;
+        outline: none; }
+    .wpcf7 .wpcf7-form p textarea.wpcf7-textarea {
+      margin-bottom: 3%; }
+      .wpcf7 .wpcf7-form p textarea.wpcf7-textarea:active, .wpcf7 .wpcf7-form p textarea.wpcf7-textarea:focus {
+        border-bottom: 1px solid #000;
+        outline: none; }
+    .wpcf7 .wpcf7-form p input.wpcf7-submit {
+      cursor: pointer;
+      border-radius: 0px;
+      background: #000000;
+      color: #ffffff;
+      font-family: "Roboto", sans-serif;
+      font-size: 1em;
+      font-weight: 300;
+      text-transform: uppercase;
+      padding: 1em;
+      width: 140px;
+      text-align: center;
+      position: relative;
+      left: calc(50% - 140px/2); }
+      .wpcf7 .wpcf7-form p input.wpcf7-submit:active, .wpcf7 .wpcf7-form p input.wpcf7-submit:focus {
+        outline: 1px dotted #000; }
 
 /*--------------------------------------------------------------
 # Forms
@@ -460,7 +579,7 @@ input[type="reset"],
 input[type="submit"] {
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
+  border-radius: 0px;
   background: #e6e6e6;
   color: rgba(0, 0, 0, 0.8);
   font-size: 12px;
@@ -497,10 +616,9 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 3px; }
+  border: 0;
+  background-color: #f4f4f4;
+  padding: 1em; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -549,18 +667,20 @@ a {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  padding: 1em; }
+  margin-right: 1em; }
   @media screen and (max-width: 601px) {
     .main-navigation {
       justify-content: center; } }
   .main-navigation .menu-primary-menu-container ul.menu {
     list-style: none;
     display: flex;
-    justify-content: space-between;
     margin-top: 0;
     -webkit-padding-start: 0px; }
     .main-navigation .menu-primary-menu-container ul.menu li {
-      padding: 1em; }
+      padding: 1em;
+      width: auto; }
+      .main-navigation .menu-primary-menu-container ul.menu li:hover {
+        background-color: #f7f7f7; }
       .main-navigation .menu-primary-menu-container ul.menu li a {
         text-decoration: none;
         color: #000;
@@ -575,8 +695,8 @@ a {
         @media screen and (max-width: 500px) {
           .main-navigation .menu-primary-menu-container ul.menu li a {
             font-size: 0.75em; } }
-        .main-navigation .menu-primary-menu-container ul.menu li a:hover li {
-          background-color: lightgray; }
+    .main-navigation .menu-primary-menu-container ul.menu li:hover a {
+      color: #1a1a1a; }
 
 .menu-item-has-children {
   position: relative; }
@@ -587,7 +707,8 @@ a {
     list-style: none;
     position: absolute;
     left: 0;
-    display: none; }
+    display: none;
+    margin-top: 10px; }
   .menu-item-has-children .is-visible {
     display: flex; }
 
@@ -893,7 +1014,10 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-top: 3em;
+  margin-bottom: 2em;
+  width: 80%; }
   .missing-links-container .ml-link {
     text-decoration: none;
     color: #000;
@@ -901,40 +1025,79 @@ footer {
     text-transform: uppercase;
     font-size: 1.2em;
     letter-spacing: 2px;
-    font-weight: 300; }
+    font-weight: 300;
+    line-height: 1.5;
+    padding-top: 0.8em;
+    margin: 0.1em; }
+
+.ml-link.text-color {
+  color: #d0d0d0; }
 
 a.ml-link:hover {
-  border-bottom: 1px solid #000; }
+  text-decoration: underline; }
 
 .footer-bottom-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background-color: #000000; }
-  .footer-bottom-container .copyright-info p {
-    color: #FFF;
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-    font-size: 0.75em;
-    letter-spacing: 1px; }
+  .footer-bottom-container .copyright-info {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    margin: 20px auto 0; }
+    .footer-bottom-container .copyright-info p {
+      color: #FFF;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      font-size: 0.5em;
+      font-style: italic;
+      letter-spacing: 1px;
+      margin-right: 1em; }
   .footer-bottom-container .developer-info {
-    margin-left: 1em; }
+    width: 25%;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center; }
     .footer-bottom-container .developer-info p {
       color: #FFF;
       font-family: "Roboto", sans-serif;
       text-transform: uppercase;
-      font-size: 0.75em;
+      font-size: 0.5em;
+      font-style: italic;
       letter-spacing: 1px; }
       .footer-bottom-container .developer-info p a {
         text-decoration: none;
         color: #FFF;
         font-family: "Roboto", sans-serif;
+        font-size: 0.5em;
+        font-style: italic;
         text-transform: uppercase;
         letter-spacing: 1px; }
 
-/* --------------------
-# Missing Links Contact Reveal
------------------------- */
-.wpcf7 {
-  display: none; }
+.content-area {
+  margin-top: 1em; }
+  @media screen and (max-width: 601px) {
+    .content-area {
+      margin-top: 2em; } }
+  .content-area .site-main .entry-content {
+    margin: 0 auto; }
+
+.about-copy {
+  display: flex;
+  justify-content: center; }
+  .about-copy .about-text {
+    display: flex;
+    width: 75%;
+    padding: 2em; }
+    @media screen and (max-width: 520px) {
+      .about-copy .about-text {
+        width: 88%; } }
+    .about-copy .about-text p {
+      font-family: "Roboto", sans-serif;
+      font-size: 1em;
+      font-weight: 400;
+      letter-spacing: 1px;
+      -webkit-font-smoothing: antialiased; }
 
 /*# sourceMappingURL=style.css.map */
