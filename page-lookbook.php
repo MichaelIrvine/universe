@@ -18,19 +18,41 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+<?php if( have_rows('lookbook') ): ?>
 
-			get_template_part( 'template-parts/content', 'page' );
+	<ul class="lookbooks">
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+	<?php while( have_rows('lookbook') ): the_row(); 
 
-		endwhile; // End of the loop.
+		// vars
+		$image = get_sub_field('lookbook_feature_image');
+		$title = get_sub_field('lookbook_title');
+		$link = get_sub_field('lookbook_link');
+
 		?>
+
+		<li class="lookbook">
+
+			<?php if( $link ): ?>
+				<a href="<?php echo $link; ?>">
+			<?php endif; ?>
+		    	<div class="lookbook-wrapper" style="background-image: url('<?php echo $image['url'] ?>');">
+				
+				<h1><?php echo $title; ?></h1>
+				</div>
+			<?php if( $link ): ?>
+				</a>
+			<?php endif; ?>
+
+
+
+		</li>
+
+	<?php endwhile; ?>
+
+	</ul>
+
+<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

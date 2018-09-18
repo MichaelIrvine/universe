@@ -10,6 +10,7 @@ footer {
 
 .footer-logo-small {
   align-self: center;
+  width: 100px;
 }
 
 .missing-links-container {
@@ -46,7 +47,9 @@ a.ml-link:hover {
 }
 
 
-
+.ml-link:not(:first-child) {
+  display: none;
+}
 
 
 .footer-bottom-container {

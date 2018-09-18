@@ -1020,8 +1020,7 @@ header {
         header .site-branding .custom-logo-link {
           display: none; } }
     header .site-branding .mobile-logo {
-      display: none;
-      min-width: 50px; }
+      display: none; }
       @media screen and (max-width: 700px) {
         header .site-branding .mobile-logo {
           display: block; } }
@@ -1104,7 +1103,8 @@ a.ml-link:hover {
         letter-spacing: 1px; }
 
 .content-area {
-  margin-top: 1em; }
+  margin-top: 1em;
+  background: green; }
   @media screen and (max-width: 601px) {
     .content-area {
       margin-top: 2em; } }
@@ -1160,20 +1160,5 @@ a.ml-link:hover {
 section.ml-content:last-child {
   border-bottom: 1px solid black;
   margin-bottom: 50px; }
-
-.lookbooks {
-  list-style-type: none;
-  padding: 0; }
-  .lookbooks .lookbook-wrapper {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-  .lookbooks .lookbook a {
-    color: #ffffff;
-    text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */

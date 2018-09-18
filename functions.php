@@ -80,6 +80,7 @@ if ( ! function_exists( 'universe_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+		
 	}
 endif;
 add_action( 'after_setup_theme', 'universe_setup' );
@@ -236,4 +237,68 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_page($args);
 
 }
+
+/**
+ * Lookbook CPT ------
+ */
+
+ 
+ function universe_register_custom_post_types() {
+    $labels = array(
+        'name'               => _x( 'Lookbooks', 'post type general name' ),
+        'singular_name'      => _x( 'Lookbook', 'post type singular name'),
+        'menu_name'          => _x( 'Lookbook', 'admin menu' ),
+        'name_admin_bar'     => _x( 'Lookbook', 'add new on admin bar' ),
+        'add_new'            => _x( 'Add New', 'service' ),
+        'add_new_item'       => __( 'Add New Lookbook' ),
+        'new_item'           => __( 'New Lookbook' ),
+        'edit_item'          => __( 'Edit Lookbook' ),
+        'view_item'          => __( 'View Lookbook' ),
+        'all_items'          => __( 'All Lookbook' ),
+        'search_items'       => __( 'Search Lookbooks' ),
+        'parent_item_colon'  => __( 'Parent Lookbooks:' ),
+        'not_found'          => __( 'No Lookbooks found.' ),
+        'not_found_in_trash' => __( 'No Lookbooks found in Trash.' ),
+        'archives'           => __( 'Lookbook Archives'),
+        'insert_into_item'   => __( 'Uploaded to this Lookbook'),
+        'uploaded_to_this_item' => __( 'Lookbook Archives'),
+        'filter_item_list'   => __( 'Filter Lookbooks list'),
+        'items_list_navigation' => __( 'Lookbooks list navigation'),
+        'items_list'         => __( 'Lookbooks list'),
+        'featured_image'     => __( 'Lookbook feature image'),
+        'set_featured_image' => __( 'Set Lookbook feature image'),
+        'remove_featured_image' => __( 'Remove Lookbook feature image'),
+        'use_featured_image' => __( 'Use as feature image'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus'  => true,
+        'show_in_admin_bar'  => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'lookbooks' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
+        'menu_icon'          => 'dashicons-migrate',
+    );
+    register_post_type( 'lookbooks', $args );
+ }
+ add_action( 'init', 'universe_register_custom_post_types' );
+
+
+ /* Flush */
+
+     function universe_rewrite_flush() {
+        universe_register_custom_post_types();
+        flush_rewrite_rules();
+    }
+	register_activation_hook( __FILE__, 'universe_rewrite_flush' );
+	
 

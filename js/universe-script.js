@@ -24,9 +24,16 @@ jQuery(document).ready(function($) {
 /* --------------------
 # Missing Links - Contact reveal
 ------------------------ */
+const missingLink = $('a.ml-link:first-child');
 const mlLinks     = $('a.ml-link');
 const contactBtn  = $('a.ml-link:nth-child(2)');
 const contactForm = $('.wpcf7');
+
+missingLink.click(function(e){
+  e.preventDefault();
+  console.log('toastyyy');
+  mlLinks.slideDown('slow');
+});
 
 contactBtn.click(function(e){
     e.preventDefault();

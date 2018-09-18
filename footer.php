@@ -18,7 +18,7 @@
 
 		<?php
 		$footerLogo = get_field('footer_logo', 'option');
-		echo '<img src="' . $footerLogo['url'] . '" alt="' . $footerLogo . '" />';
+		echo '<img src="' . $footerLogo . '" alt="' . $footerLogo . '" />';
 		?>
 
 	</div>

@@ -17,7 +17,9 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
+			<div class="ml-title">
+				<h1>Missing Links</h1>
+			</div>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'missing-links',
@@ -34,10 +36,15 @@ get_header();
 					$content = get_sub_field('ml_content');
 					?>
 
-					<section>
-						<div class="ml-content-box">
+					<section class="ml-content">
+						<div class="ml-content--inner">
+							
+							<h2>
 							<?php
-							echo $title; 
+							echo $title;
+							?>
+							</h2>
+							<?php
 							echo $content; ?>
 						</div>	
 					</section>

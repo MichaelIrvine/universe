@@ -1,0 +1,32 @@
+
+
+
+.menu-missing-links-container {
+    border-bottom: 1px solid black;
+    border-top: 0px;
+    display: flex;
+    justify-content: center;
+
+    #missing-links {
+        list-style: none;
+        display: flex;
+        
+
+        li {
+            margin: 0px 10px 0px 0px;
+            padding: 0px 10px 0px 0px;
+
+            a {
+                text-decoration: none;
+                color: #171717;
+                &:hover {
+                    color: #828282;
+                }
+            }
+        }
+
+        li:not(:last-child) {
+            border-right: 1px solid #171717;
+        }
+    }
+}
