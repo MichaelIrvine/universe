@@ -1,4 +1,4 @@
-// --- Impoorts for all layout parts ---
+// --- Imports for all layout parts ---
 
 // Header
 @import "header";
@@ -12,5 +12,9 @@
 @import "missing-links";
 // Lookbook Page Layout
 @import "lookbook-main";
-
-
+// Lookbook Page Layout
+@import "lookbook-single";
+// Lookbook Page Layout
+@import "collections-main";
+// Cart Page Layout
+@import "cart";

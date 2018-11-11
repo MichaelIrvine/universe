@@ -17,10 +17,10 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			
+
 		<?php
-		echo apply_filters('the_content',$wp_query->post->post_content);
-		?>
+echo apply_filters('the_content',$wp_query->post->post_content);
+?>
 
 		<?php
 		while ( have_posts() ) :

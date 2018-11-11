@@ -38,7 +38,7 @@ get_header();
 			<?php endif; ?>
 		    	<div class="lookbook-wrapper" style="background-image: url('<?php echo $image['url'] ?>');">
 				
-				<h1><?php echo $title; ?></h1>
+				<p><?php echo $title; ?></p>
 				</div>
 			<?php if( $link ): ?>
 				</a>

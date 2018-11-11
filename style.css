@@ -353,7 +353,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: "Roboto", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
@@ -439,61 +439,73 @@ table {
   margin: 0 0 1.5em;
   width: 100%; }
 
-.scroll-to-top {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 9999;
-  width: 32px;
-  height: 32px; }
-  .scroll-to-top .fas {
-    color: #000; }
+.scrollup {
+  transition: opacity 1s ease-in-out;
+  opacity: 0; }
+  .scrollup .scroll-to-top {
+    position: fixed;
+    bottom: 46px;
+    right: 40px;
+    z-index: 9999;
+    width: 32px;
+    height: 32px;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; }
+    .scrollup .scroll-to-top .fas {
+      color: #000; }
+
+.fade-arrow-in {
+  opacity: 1; }
 
 .newsletter {
   display: flex;
-  justify-content: center;
-  margin: 5em 1em; }
-  .newsletter .widget_text {
+  justify-content: center; }
+  .newsletter .widget-title {
+    display: none; }
+  .newsletter #text-3 {
     width: 100%; }
-    .newsletter .widget_text .textwidget .tnp {
+    .newsletter #text-3 .textwidget {
       max-width: 100%;
       display: flex;
       justify-content: center; }
-      .newsletter .widget_text .textwidget .tnp form {
+      .newsletter #text-3 .textwidget form {
         display: flex;
         justify-content: center;
-        width: 60%; }
-        @media screen and (max-width: 645px) {
-          .newsletter .widget_text .textwidget .tnp form {
-            flex-direction: column; } }
-        .newsletter .widget_text .textwidget .tnp form .tnp-field-email {
-          width: auto; }
-          .newsletter .widget_text .textwidget .tnp form .tnp-field-email input.tnp-email {
-            outline: none;
-            height: auto;
-            box-sizing: border-box;
-            border-radius: 0px;
-            width: 465px; }
-            @media screen and (max-width: 645px) {
-              .newsletter .widget_text .textwidget .tnp form .tnp-field-email input.tnp-email {
-                width: 100%; } }
-          .newsletter .widget_text .textwidget .tnp form .tnp-field-email .tnp-email:focus {
-            border-bottom: 1px solid #000; }
-          .newsletter .widget_text .textwidget .tnp form .tnp-field-email .tnp-email::placeholder {
-            font-style: italic; }
-        .newsletter .widget_text .textwidget .tnp form .tnp-field-button {
-          width: auto; }
-          @media screen and (max-width: 645px) {
-            .newsletter .widget_text .textwidget .tnp form .tnp-field-button {
-              align-self: flex-end; } }
-          .newsletter .widget_text .textwidget .tnp form .tnp-field-button input.tnp-submit {
+        width: 100%; }
+        .newsletter #text-3 .textwidget form p {
+          width: auto;
+          display: flex; }
+          @media screen and (max-width: 560px) {
+            .newsletter #text-3 .textwidget form p {
+              flex-direction: column;
+              justify-content: center; } }
+          .newsletter #text-3 .textwidget form p #newsletter-signup {
+            border: 1px solid #f4f4f4;
+            font-size: 1em;
+            font-weight: 100;
+            letter-spacing: 1px;
+            width: 415px;
+            height: 50px;
+            transition: all 0.7s ease-in; }
+            .newsletter #text-3 .textwidget form p #newsletter-signup:focus {
+              outline: none;
+              border-bottom-color: #000; }
+            @media screen and (max-width: 560px) {
+              .newsletter #text-3 .textwidget form p #newsletter-signup {
+                width: 300px; } }
+          .newsletter #text-3 .textwidget form p #newsletter-submit {
             background-color: #000;
             border: 0px;
-            width: 100px;
+            width: auto;
+            height: 50px;
             cursor: pointer;
-            font-style: italic; }
-            .newsletter .widget_text .textwidget .tnp form .tnp-field-button input.tnp-submit:focus {
-              outline: 1px dotted #000; }
+            font-style: italic;
+            color: white;
+            font-size: 1.25em;
+            font-weight: 100; }
 
 .post-embed-video .embed-container {
   position: relative;
@@ -514,54 +526,54 @@ table {
 /* --------------------
 # Missing Links Contact Reveal
 ------------------------ */
-.wpcf7 {
+#wpcf7-f107-o1 {
   display: none;
   width: 100%; }
-  .wpcf7 .wpcf7-form {
+  #wpcf7-f107-o1 .wpcf7-form {
     width: 70%;
     margin: 0 auto; }
     @media screen and (max-width: 700px) {
-      .wpcf7 .wpcf7-form {
+      #wpcf7-f107-o1 .wpcf7-form {
         width: 80%; } }
-    .wpcf7 .wpcf7-form p input.first-name {
+    #wpcf7-f107-o1 .wpcf7-form p input.first-name {
       width: 48%;
       margin-right: 2%;
       margin-bottom: 3%; }
       @media screen and (max-width: 815px) {
-        .wpcf7 .wpcf7-form p input.first-name {
+        #wpcf7-f107-o1 .wpcf7-form p input.first-name {
           width: 100%;
           margin-right: 0; } }
-      .wpcf7 .wpcf7-form p input.first-name:active, .wpcf7 .wpcf7-form p input.first-name:focus {
+      #wpcf7-f107-o1 .wpcf7-form p input.first-name:active, #wpcf7-f107-o1 .wpcf7-form p input.first-name:focus {
         border-bottom: 1px solid #000;
         outline: none; }
-    .wpcf7 .wpcf7-form p input.last-name {
+    #wpcf7-f107-o1 .wpcf7-form p input.last-name {
       width: 48%;
       margin-left: 2%;
       margin-bottom: 3%; }
       @media screen and (max-width: 815px) {
-        .wpcf7 .wpcf7-form p input.last-name {
+        #wpcf7-f107-o1 .wpcf7-form p input.last-name {
           width: 100%;
           margin-left: 0; } }
-      .wpcf7 .wpcf7-form p input.last-name:active, .wpcf7 .wpcf7-form p input.last-name:focus {
+      #wpcf7-f107-o1 .wpcf7-form p input.last-name:active, #wpcf7-f107-o1 .wpcf7-form p input.last-name:focus {
         border-bottom: 1px solid #000;
         outline: none; }
-    .wpcf7 .wpcf7-form p input.email {
+    #wpcf7-f107-o1 .wpcf7-form p input.email {
       width: 100%;
       margin-bottom: 3%; }
-      .wpcf7 .wpcf7-form p input.email:active, .wpcf7 .wpcf7-form p input.email:focus {
+      #wpcf7-f107-o1 .wpcf7-form p input.email:active, #wpcf7-f107-o1 .wpcf7-form p input.email:focus {
         border-bottom: 1px solid #000;
         outline: none; }
-    .wpcf7 .wpcf7-form p textarea.wpcf7-textarea {
+    #wpcf7-f107-o1 .wpcf7-form p textarea.wpcf7-textarea {
       margin-bottom: 3%; }
-      .wpcf7 .wpcf7-form p textarea.wpcf7-textarea:active, .wpcf7 .wpcf7-form p textarea.wpcf7-textarea:focus {
+      #wpcf7-f107-o1 .wpcf7-form p textarea.wpcf7-textarea:active, #wpcf7-f107-o1 .wpcf7-form p textarea.wpcf7-textarea:focus {
         border-bottom: 1px solid #000;
         outline: none; }
-    .wpcf7 .wpcf7-form p input.wpcf7-submit {
+    #wpcf7-f107-o1 .wpcf7-form p input.wpcf7-submit {
       cursor: pointer;
       border-radius: 0px;
       background: #000000;
       color: #ffffff;
-      font-family: "Roboto", sans-serif;
+      font-family: "Oswald", sans-serif;
       font-size: 1em;
       font-weight: 300;
       text-transform: uppercase;
@@ -570,7 +582,7 @@ table {
       text-align: center;
       position: relative;
       left: calc(50% - 140px/2); }
-      .wpcf7 .wpcf7-form p input.wpcf7-submit:active, .wpcf7 .wpcf7-form p input.wpcf7-submit:focus {
+      #wpcf7-f107-o1 .wpcf7-form p input.wpcf7-submit:active, #wpcf7-f107-o1 .wpcf7-form p input.wpcf7-submit:focus {
         outline: 1px dotted #000; }
 
 /*--------------------------------------------------------------
@@ -652,16 +664,10 @@ textarea {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-a {
-  color: royalblue; }
-  a:visited {
-    color: purple; }
-  a:hover, a:focus, a:active {
-    color: midnightblue; }
-  a:focus {
-    outline: thin dotted; }
-  a:hover, a:active {
-    outline: 0; }
+a:focus {
+  outline: thin dotted; }
+a:hover, a:active {
+  outline: 0; }
 
 /*--------------------------------------------------------------
 ## Menus
@@ -678,7 +684,8 @@ a {
     list-style: none;
     display: flex;
     margin-top: 0;
-    -webkit-padding-start: 0px; }
+    -webkit-padding-start: 0px;
+    margin-block-end: 0; }
     .main-navigation .menu-primary-menu-container ul.menu li {
       padding: 1em;
       width: auto; }
@@ -687,9 +694,9 @@ a {
       .main-navigation .menu-primary-menu-container ul.menu li a {
         text-decoration: none;
         color: #000;
-        font-family: "Roboto", sans-serif;
+        font-family: "Oswald", sans-serif;
         text-transform: uppercase;
-        font-size: 1.2em;
+        font-size: 1em;
         font-weight: 300;
         letter-spacing: 2px; }
         @media screen and (max-width: 601px) {
@@ -711,13 +718,13 @@ a {
     position: absolute;
     left: 0;
     display: none;
-    margin-top: 10px; }
+    margin-top: 16px; }
   .menu-item-has-children .is-visible {
     display: flex; }
 
-  /* --------------------
-# Missing Links Contact Reveal
------------------------- */
+.current-menu-item a {
+  border-bottom: 1px solid; }
+
 /*--------------------------------------------------------------
 ## Missing Links Menu
 --------------------------------------------------------------*/
@@ -895,7 +902,7 @@ a {
   display: block; }
 
 .hentry {
-  margin: 0 0 1.5em; }
+  margin: 0 0 2px; }
 
 .updated:not(.published) {
   display: none; }
@@ -1002,29 +1009,36 @@ object {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-header {
+header#masthead {
+  height: 56px;
   display: flex; }
   @media screen and (max-width: 601px) {
-    header {
+    header#masthead {
       flex-direction: column; } }
-  header .site-branding {
+  header#masthead .site-branding {
     display: flex; }
     @media screen and (max-width: 601px) {
-      header .site-branding {
+      header#masthead .site-branding {
         justify-content: center; } }
-    header .site-branding .custom-logo-link {
-      width: 250px;
-      padding: 1em;
+    header#masthead .site-branding .custom-logo-link {
+      width: 175px;
       padding-left: 2em; }
       @media screen and (max-width: 700px) {
-        header .site-branding .custom-logo-link {
+        header#masthead .site-branding .custom-logo-link {
           display: none; } }
-    header .site-branding .mobile-logo {
+    header#masthead .site-branding .mobile-logo {
       display: none;
       min-width: 50px; }
       @media screen and (max-width: 700px) {
-        header .site-branding .mobile-logo {
+        header#masthead .site-branding .mobile-logo {
           display: block; } }
+
+.grey-bar {
+  height: 58px;
+  background-color: #ffffff; }
+
+.bar-color {
+  background-color: #f7f7f7; }
 
 footer {
   display: flex;
@@ -1032,7 +1046,7 @@ footer {
 
 .footer-logo-small {
   align-self: center;
-  width: 100px; }
+  width: 50px; }
 
 .missing-links-container {
   align-self: center;
@@ -1043,23 +1057,38 @@ footer {
   margin-top: 3em;
   margin-bottom: 2em;
   width: 80%; }
+  .missing-links-container .ml-toggle {
+    text-decoration: none;
+    color: #000;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0.1em;
+    cursor: pointer;
+    border-bottom: 1px solid #FFF; }
+  .missing-links-container .ml-toggle:hover {
+    border-bottom-color: #000; }
   .missing-links-container .ml-link {
     text-decoration: none;
     color: #000;
-    font-family: "Roboto", sans-serif;
+    font-family: "Oswald", sans-serif;
     text-transform: uppercase;
     font-size: 1.2em;
     letter-spacing: 2px;
     font-weight: 300;
     line-height: 1.5;
     padding-top: 0.8em;
-    margin: 0.1em; }
+    margin: 0.1em;
+    border-bottom: 1px solid #FFF; }
 
 .ml-link.text-color {
   color: #d0d0d0; }
 
 a.ml-link:hover {
-  text-decoration: underline; }
+  border-bottom-color: #000; }
 
 .ml-link:not(:first-child) {
   display: none; }
@@ -1068,48 +1097,27 @@ a.ml-link:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #000000; }
+  background-color: #000000;
+  height: 6vh; }
   .footer-bottom-container .copyright-info {
     display: flex;
     justify-content: center;
     width: 25%;
-    margin: 20px auto 0; }
+    margin: 0 auto; }
     .footer-bottom-container .copyright-info p {
       color: #FFF;
-      font-family: "Roboto", sans-serif;
+      font-family: "Oswald", sans-serif;
       text-transform: uppercase;
       font-size: 0.5em;
       font-style: italic;
       letter-spacing: 1px;
       margin-right: 1em; }
-  .footer-bottom-container .developer-info {
-    width: 25%;
-    margin: 0 auto 20px;
-    display: flex;
-    justify-content: center; }
-    .footer-bottom-container .developer-info p {
-      color: #FFF;
-      font-family: "Roboto", sans-serif;
-      text-transform: uppercase;
-      font-size: 0.5em;
-      font-style: italic;
-      letter-spacing: 1px; }
-      .footer-bottom-container .developer-info p a {
-        text-decoration: none;
-        color: #FFF;
-        font-family: "Roboto", sans-serif;
-        font-size: 0.5em;
-        font-style: italic;
-        text-transform: uppercase;
-        letter-spacing: 1px; }
 
-.content-area {
-  margin-top: 1em; }
-  @media screen and (max-width: 601px) {
-    .content-area {
-      margin-top: 2em; } }
-  .content-area .site-main .entry-content {
-    margin: 0 auto; }
+@media screen and (max-width: 601px) {
+  .content-area {
+    margin-top: 2em; } }
+.content-area .site-main .entry-content {
+  margin: 0 auto; }
 
 .about-copy {
   display: flex;
@@ -1122,11 +1130,14 @@ a.ml-link:hover {
       .about-copy .about-text {
         width: 88%; } }
     .about-copy .about-text p {
-      font-family: "Roboto", sans-serif;
+      font-family: "Oswald", sans-serif;
       font-size: 1em;
       font-weight: 400;
       letter-spacing: 1px;
       -webkit-font-smoothing: antialiased; }
+
+*:focus {
+  outline: 1px dotted black; }
 
 .ml-title {
   display: flex;
@@ -1134,13 +1145,12 @@ a.ml-link:hover {
   border-top: 1px solid black;
   border-bottom: 1px solid black; }
   .ml-title h1 {
-    font-family: "Roboto", sans-serif;
+    font-family: "Oswald", sans-serif;
     font-weight: 300; }
 
 .ml-content {
   display: flex;
   justify-content: center;
-  background-color: #f3eee9;
   justify-content: center; }
   .ml-content .ml-content--inner {
     display: flex;
@@ -1163,7 +1173,9 @@ section.ml-content:last-child {
 
 .lookbooks {
   list-style-type: none;
-  padding: 0; }
+  padding: 0;
+  margin-block-start: 0;
+  margin: 0; }
   .lookbooks .lookbook-wrapper {
     background-position: center;
     background-repeat: no-repeat;
@@ -1175,5 +1187,55 @@ section.ml-content:last-child {
   .lookbooks .lookbook a {
     color: #ffffff;
     text-decoration: none; }
+  .lookbooks .lookbook p {
+    font-size: 18vw;
+    text-transform: uppercase; }
+    @media screen and (min-width: 650px) {
+      .lookbooks .lookbook p {
+        font-size: 15vw; } }
+
+#lookbook-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  top: 0; }
+  #lookbook-title h2 {
+    font-size: 2em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0.2em 0; }
+
+#lookbook-title {
+  position: sticky;
+  top: 0; }
+
+.single-lookbook ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px; }
+
+.collections {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+  .collections .collection {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .collections .collection a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18vw;
+      text-transform: uppercase; }
+      @media screen and (min-width: 650px) {
+        .collections .collection a {
+          font-size: 15vw; } }
 
 /*# sourceMappingURL=style.css.map */

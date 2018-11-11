@@ -1,3 +1,7 @@
+*:focus {
+    outline: 1px dotted black;
+}
+
 .ml-title {
     display: flex;
     justify-content: center;
@@ -15,7 +19,7 @@
 .ml-content {
     display: flex;
     justify-content: center;
-    background-color: #f3eee9;
+    // background-color: #f3eee9;
     justify-content: center;
 
 
@@ -27,6 +31,8 @@
         // border: 1px solid #171717;
         padding: 50px;
         border-bottom: 1px solid #171717;
+
+
     }
 
     .ml-content--inner:last-child {

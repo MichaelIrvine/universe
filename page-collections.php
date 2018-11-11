@@ -20,7 +20,7 @@ get_header();
 
 <?php if( have_rows('collections') ): ?>
 
-	<ul class="slides">
+	<ul class="collections">
 
 	<?php while( have_rows('collections') ): the_row(); 
 
@@ -31,13 +31,13 @@ get_header();
 
 		?>
 
-		<li class="slide">
+		<li class="collection" style="background-image: url('<?php echo $image['url'] ?>');">
 
 			<?php if( $link ): ?>
 				<a href="<?php echo $link; ?>">
 			<?php endif; ?>
 		    	<?php echo $title; ?>
-				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+
 
 			<?php if( $link ): ?>
 				</a>

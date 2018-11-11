@@ -137,15 +137,15 @@ function universe_scripts() {
 
 	wp_enqueue_script( 'universe-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	// Google Font
-	wp_enqueue_style('universe-googlefonts', "https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+	wp_enqueue_style('universe-googlefonts', "https://fonts.googleapis.com/css?family=Oswald:300,400,500");
 	// Jquery Enqueue
 	wp_enqueue_script('jquery');
 	// Main JS Enqueue
-	wp_enqueue_script( 'universe_script', get_stylesheet_directory_uri() . '/js/universe-script.js', array('jquery'), '1.1', false );
+	wp_enqueue_script( 'universe_script', get_stylesheet_directory_uri() . '/js/universe-script.js', array('jquery'), '1.1', true );
 	// Scroll to top JS
-	wp_enqueue_script( 'scroll_up', get_stylesheet_directory_uri() . '/js/scroll-top.js', array('jquery'), '1.1', false );
+	wp_enqueue_script( 'scroll_up', get_stylesheet_directory_uri() . '/js/scroll-top.js', array('jquery'), '1.1', true );
 	// Missing Links - Jump to ID
-	wp_enqueue_script( 'jump_link', get_stylesheet_directory_uri() . '/js/jump-link.js', array('jquery'), '1.1', false );
+	wp_enqueue_script( 'jump_link', get_stylesheet_directory_uri() . '/js/jump-link.js', array('jquery'), '1.1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -302,3 +302,31 @@ if( function_exists('acf_add_options_page') ) {
 	register_activation_hook( __FILE__, 'universe_rewrite_flush' );
 	
 
+
+
+// --------- Woo Commerce 
+
+
+/**
+ * Remove Product Zoom & Lightbox
+ */
+
+function remove_image_zoom_support() {
+	remove_theme_support( 'wc-product-gallery-zoom' );
+	remove_theme_support( 'wc-product-gallery-lightbox' );
+}
+add_action( 'wp', 'remove_image_zoom_support', 100 );
+
+/**
+ * Remove product data tabs
+ */
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+function woo_remove_product_tabs( $tabs ) {
+
+    unset( $tabs['description'] );      	// Remove the description tab
+    unset( $tabs['reviews'] ); 			// Remove the reviews tab
+    unset( $tabs['additional_information'] );  	// Remove the additional information tab
+
+    return $tabs;
+}

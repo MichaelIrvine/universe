@@ -1,0 +1,126 @@
+ 
+
+
+.woocommerce-checkout .woocommerce {
+    padding: 6%;
+
+    .woocommerce-info {
+        color: #ffffff;
+        background-color: #000000;
+        font-size: 1em;
+        font-weight: 200;
+        font-family: Helvetica Neue, sans-serif;
+        padding: 0.75%;
+
+        a {
+        color: #ffffff;
+        font-size: 1em;
+        font-weight: 200;
+        font-family: Helvetica Neue, sans-serif;
+        }
+    }
+
+    .woocommerce-billing-fields {
+        margin-top: 2em;
+
+        h3 {
+            color: #000000;
+            font-size: 1.7em;
+            font-weight: 200;
+            font-family: Helvetica Neue, sans-serif;  
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .woocommerce-billing-fields__field-wrapper {
+                font-family: 'Oswald', sans-serif;
+                font-weight: 200;
+                text-transform: uppercase;
+                border: 1px solid;
+                padding: 6%;
+
+                input {
+                    background-color: #ffffff;
+                    width: 100%;
+                    border: 1px solid rgba($color: #000000, $alpha: 0.4);
+                    
+
+                    &:focus {
+                        border: 1px solid rgba($color: #000000, $alpha: 1);
+                    }
+                }
+        }
+    }
+
+    .woocommerce-shipping-fields {
+
+        font-family: 'Oswald', sans-serif;
+        font-weight: 200;
+        text-transform: uppercase;
+        border: 1px solid;
+        padding: 6%;
+
+            .woocommerce-shipping-fields__field-wrapper {
+                
+                margin-top: 2em;
+                margin-bottom: 2em;
+
+                h3 {
+                    font-weight: 200;
+                }
+
+                input {
+                    background-color: #ffffff;
+                    width: 100%;
+                    border: 1px solid rgba($color: #000000, $alpha: 0.4);
+                    transition: color 0.5s ease-in-out;
+
+                    &:focus {
+                        border: 1px solid rgba($color: #000000, $alpha: 1);
+                    }
+            }
+        }
+    }
+
+    .woocommerce-additional-fields__field-wrapper {
+
+        label {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 200;
+            text-transform: uppercase;
+        }
+
+        textarea {
+            background-color: #ffffff;
+            width: 100%;
+            border: 1px solid rgba($color: #000000, $alpha: 0.4);
+            transition: color 0.5s ease-in-out;
+
+            &:focus {
+                border: 1px solid rgba($color: #000000, $alpha: 1);
+            }
+        }
+    }
+
+    #order_review_heading {
+            color: #000000;
+            font-size: 1.7em;
+            font-weight: 200;
+            font-family: Helvetica Neue, sans-serif;  
+            text-transform: uppercase;
+            letter-spacing: 2px;
+    }
+
+    .woocommerce-checkout-review-order {
+        .woocommerce-checkout-review-order-table {
+            border: 1px solid #000000;
+            padding: 4%;
+            
+            thead {
+                tr {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

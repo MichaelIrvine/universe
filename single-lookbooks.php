@@ -10,24 +10,30 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area single-lookbook">
 		<main id="main" class="site-main">
+		<div class="lookbook-featured-image">
+			<?php echo the_post_thumbnail('full'); ?> 
+		</div>
 
+		<div id="lookbook-title">
+			<h2><?php echo the_title(); ?></h2> 
+		</div>
 		<?php
-		while ( have_posts() ) :
-			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+		$images = get_field('lookbook_content');
+		$size = 'full';
 
-			the_post_navigation();
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
+		if( $images ): ?>
+			<ul>
+				<?php foreach( $images as $image ): ?>
+					<li>
+						<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

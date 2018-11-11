@@ -23,7 +23,7 @@
 
 	</div>
 	<div class="missing-links-container">
-		
+		<h3 class="ml-toggle">Missing Links</h3>
 		<?php
 		if (!is_page('missing-links') ) : ?>
 		
@@ -69,10 +69,6 @@
 		if( have_rows('developer_info', 'option') ): 
 		while( have_rows('developer_info', 'option') ): the_row();
 			?>
-			
-			 <p class="developer-info-text">Website by: <a href="<?php the_sub_field('developer_website');?>"> 
-				 <?php the_sub_field('developer_name', 'option');?>
-			</a></p>
 		<?php 
 		endwhile; 
 		endif;

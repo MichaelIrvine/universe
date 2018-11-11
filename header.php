@@ -56,5 +56,6 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+	<div class="grey-bar"></div>
 
 	<div id="content" class="site-content">
