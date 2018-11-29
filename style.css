@@ -1039,6 +1039,9 @@ header#masthead {
 
 .bar-color {
   background-color: #f7f7f7; }
+  @media screen and (max-width: 601px) {
+    .bar-color {
+      background-color: #ffffff; } }
 
 footer {
   display: flex;

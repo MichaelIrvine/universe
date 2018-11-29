@@ -19,8 +19,6 @@ jQuery(document).ready(function($) {
   const menuBar = $('.grey-bar');
   const navParent = $('.menu-item-has-children');
 
-  console.log(navParent);
-
   if (pageUrl.indexOf("lookbook") > -1 || pageUrl.indexOf("collections") > -1 || pageUrl.indexOf("product") > -1) {
     menuBar.addClass('bar-color');
     subMenu.addClass("is-visible");
@@ -54,4 +52,12 @@ contactBtn.click(function(e){
     
 });
 
+
 });
+
+// End JQuery
+// ------------------------------------------------------
+// ------------------------------------------------------
+
+
+

@@ -9,6 +9,17 @@ WooCommerce styles override
  * Products
  */
 
+
+.page-title {
+    text-align: center;
+    color: #000000;
+    font-size: 2em;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 2% 0;
+ }
+
  .woocommerce-result-count {
      display: none;
  }
@@ -19,28 +30,40 @@ WooCommerce styles override
 
 .columns-3 {
     display: flex;
-    max-width: 1000px;
-    margin: 0 auto;
-    justify-content: space-evenly;
+    width: 100%;
+
+    ul.products {
+        width: 100%;
+        margin: 2em;
+        padding-inline-start: 0px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+    li.product {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+            @media screen and ( max-width: 601px ){
+            flex-direction: column;
+            }
+        }
+    }
 }
 
 img.product-detail {
-	max-width: 500px;
-	width: 300px;
-    height: 300px;
-    margin: 2em;
+	width: 30%;
+    height: 70%;
+    
+    @media screen and ( max-width: 699px ){
+        display: none;
+    }
 }
 
-ul.products {
-    width: 100%;
-    margin: 2em;
-}
 
-li.product {
-    display: flex;
-    width: 100% !important;
-    margin: 0;
-}
 
 
 .woocommerce-LoopProduct-link {
@@ -50,6 +73,19 @@ li.product {
     &:visited {
     color: #ffffff;
     }
+
+    img { 
+    width: 100%;        
+    }
+}
+
+.product-title-price-container {
+    width: 20%;
+    
+    @media screen and ( max-width: 601px ){
+        width: auto;
+    }
+
 }
 
 .shipping-costs-info {
@@ -60,7 +96,7 @@ h2.woocommerce-loop-product__title {
     text-decoration: none;
     color: #000000;
     font-size: 2em;
-    font-family: Helvetica Neue, sans-serif;
+    // font-family: Helvetica Neue, sans-serif;
     font-weight: 200;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -133,7 +169,7 @@ h2.woocommerce-loop-product__title {
 
         color: #000000;
         font-size: 1em;
-        font-family: Helvetica Neue, sans-serif;
+        // font-family: Helvetica Neue, sans-serif;
         font-weight: 200;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -165,7 +201,7 @@ h2.woocommerce-loop-product__title {
         .product_title {
             color: #000000;
             font-size: 2em;
-            font-family: Helvetica Neue, sans-serif;
+            // font-family: Helvetica Neue, sans-serif;
             font-weight: 200;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -185,7 +221,7 @@ h2.woocommerce-loop-product__title {
         .woocommerce-product-details__short-description {
             color: #000000;
             font-size: 1em;
-            font-family: Helvetica Neue, sans-serif;
+            // font-family: Helvetica Neue, sans-serif;
             font-weight: 200;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -299,6 +335,10 @@ h2.woocommerce-loop-product__title {
  * Cart
  */
 
+
+
+
+
 .woocommerce-message {
     margin-left: 4%;
     color: #ffffff;
@@ -315,6 +355,34 @@ h2.woocommerce-loop-product__title {
         &:hover {
             color: #828282;
         }
+    }
+}
+
+ .cart-empty {
+    display: inline-block;
+    margin-left: 4%;
+    color: #ffffff;
+    background-color: #000000 !important;
+    font-size: 1em;
+    font-weight: 100;
+    font-family: Helvetica Neue,sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+ }
+
+.return-to-shop {
+    display: inline-block;
+    margin-left: 4%;
+    background-color: #000000 !important;
+    font-size: 1em;
+    font-weight: 100;
+    font-family: Helvetica Neue,sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    a.wc-backward {
+        color: #ffffff;
     }
 }
 
@@ -503,7 +571,7 @@ h2.woocommerce-loop-product__title {
             padding: 1%;
 
             .cart-subtotal {
-                background-color: #f3eee9;
+                background-color: #f7f7f7;
                 th {
                     font-weight: 100;
                     text-transform: uppercase;
@@ -541,7 +609,7 @@ h2.woocommerce-loop-product__title {
                     text-transform: uppercase;
                     letter-spacing: 1px;
 
-                    p {
+                    form {
                         a{
                             color: rgba(0,0,0,1);
                             &:hover { color: rgba(0,0,0,0.7); }
@@ -552,7 +620,7 @@ h2.woocommerce-loop-product__title {
 
             }
             .order-total{
-                background-color: #f3eee9;
+                background-color: #f7f7f7;
                 color: #000000;
             }
         }

@@ -134,6 +134,7 @@ function universe_scripts() {
 	wp_enqueue_style( 'universe-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'universe-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'coming-soon', get_stylesheet_directory_uri() . '/js/coming-soon.js', array('jquery'), '1.1', true );
 
 	wp_enqueue_script( 'universe-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	// Google Font
@@ -146,6 +147,7 @@ function universe_scripts() {
 	wp_enqueue_script( 'scroll_up', get_stylesheet_directory_uri() . '/js/scroll-top.js', array('jquery'), '1.1', true );
 	// Missing Links - Jump to ID
 	wp_enqueue_script( 'jump_link', get_stylesheet_directory_uri() . '/js/jump-link.js', array('jquery'), '1.1', true );
+	// Match Media Screen Size
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -330,3 +332,26 @@ function woo_remove_product_tabs( $tabs ) {
 
     return $tabs;
 }
+
+/**
+ * Remove Related Products
+ */
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+
+
+/**
+ * Custom Logo for Login
+ */
+
+ function login_logo_universe() { 
+?> 
+<style type="text/css"> 
+body.login div#login h1 a {
+background-image: url(http://localhost:8888/universe/wp-content/uploads/2018/08/P_01.svg);  //Add your own logo image in this url 
+padding-bottom: 30px; 
+} 
+</style>
+<?php 
+} add_action( 'login_enqueue_scripts', 'login_logo_universe' );
+
