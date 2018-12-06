@@ -444,7 +444,7 @@ table {
   opacity: 0; }
   .scrollup .scroll-to-top {
     position: fixed;
-    bottom: 46px;
+    bottom: 40px;
     right: 40px;
     z-index: 9999;
     width: 32px;
@@ -664,10 +664,12 @@ textarea {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-a:focus {
-  outline: thin dotted; }
-a:hover, a:active {
-  outline: 0; }
+a {
+  color: #000000; }
+  a:focus {
+    outline: thin dotted; }
+  a:hover, a:active {
+    outline: 0; }
 
 /*--------------------------------------------------------------
 ## Menus
@@ -686,6 +688,9 @@ a:hover, a:active {
     margin-top: 0;
     -webkit-padding-start: 0px;
     margin-block-end: 0; }
+    @media screen and (max-width: 601px) {
+      .main-navigation .menu-primary-menu-container ul.menu {
+        margin-top: 40px; } }
     .main-navigation .menu-primary-menu-container ul.menu li {
       padding: 1em;
       width: auto; }
@@ -693,7 +698,6 @@ a:hover, a:active {
         background-color: #f7f7f7; }
       .main-navigation .menu-primary-menu-container ul.menu li a {
         text-decoration: none;
-        color: #000;
         font-family: "Oswald", sans-serif;
         text-transform: uppercase;
         font-size: 1em;
@@ -705,8 +709,6 @@ a:hover, a:active {
         @media screen and (max-width: 500px) {
           .main-navigation .menu-primary-menu-container ul.menu li a {
             font-size: 0.75em; } }
-    .main-navigation .menu-primary-menu-container ul.menu li:hover a {
-      color: #1a1a1a; }
 
 .menu-item-has-children {
   position: relative; }
@@ -722,8 +724,13 @@ a:hover, a:active {
   .menu-item-has-children .is-visible {
     display: flex; }
 
+.current-menu-ancestor a {
+  color: #f49ac1; }
+  .current-menu-ancestor a:hover {
+    color: black; }
+
 .current-menu-item a {
-  border-bottom: 1px solid; }
+  color: #f49ac1; }
 
 /*--------------------------------------------------------------
 ## Missing Links Menu
@@ -1017,6 +1024,9 @@ header#masthead {
       flex-direction: column; } }
   header#masthead .site-branding {
     display: flex; }
+    @media screen and (max-width: 700px) {
+      header#masthead .site-branding {
+        margin: 0.5em 2em; } }
     @media screen and (max-width: 601px) {
       header#masthead .site-branding {
         justify-content: center; } }
@@ -1028,10 +1038,13 @@ header#masthead {
           display: none; } }
     header#masthead .site-branding .mobile-logo {
       display: none;
-      min-width: 50px; }
+      min-width: 40px; }
       @media screen and (max-width: 700px) {
         header#masthead .site-branding .mobile-logo {
           display: block; } }
+      @media screen and (max-width: 601px) {
+        header#masthead .site-branding .mobile-logo {
+          margin-top: 1em; } }
 
 .grey-bar {
   height: 58px;
@@ -1049,7 +1062,8 @@ footer {
 
 .footer-logo-small {
   align-self: center;
-  width: 50px; }
+  width: 35px;
+  margin: 0.8em; }
 
 .missing-links-container {
   align-self: center;
@@ -1071,9 +1085,10 @@ footer {
     line-height: 1.5;
     margin: 0.1em;
     cursor: pointer;
-    border-bottom: 1px solid #FFF; }
+    border-bottom: 1px solid #FFF;
+    padding: 1% 3%; }
   .missing-links-container .ml-toggle:hover {
-    border-bottom-color: #000; }
+    background-color: #f4f4f4; }
   .missing-links-container .ml-link {
     text-decoration: none;
     color: #000;
@@ -1083,15 +1098,14 @@ footer {
     letter-spacing: 2px;
     font-weight: 300;
     line-height: 1.5;
-    padding-top: 0.8em;
-    margin: 0.1em;
-    border-bottom: 1px solid #FFF; }
+    padding: 1% 3%;
+    margin-top: 0.8em; }
 
 .ml-link.text-color {
   color: #d0d0d0; }
 
 a.ml-link:hover {
-  border-bottom-color: #000; }
+  background-color: #f4f4f4; }
 
 .ml-link:not(:first-child) {
   display: none; }
@@ -1118,7 +1132,7 @@ a.ml-link:hover {
 
 @media screen and (max-width: 601px) {
   .content-area {
-    margin-top: 2em; } }
+    margin-top: 4.5em; } }
 .content-area .site-main .entry-content {
   margin: 0 auto; }
 
@@ -1127,6 +1141,9 @@ a.ml-link:hover {
   justify-content: center; }
   .about-copy .about-text {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 75%;
     padding: 2em; }
     @media screen and (max-width: 520px) {
@@ -1136,8 +1153,15 @@ a.ml-link:hover {
       font-family: "Oswald", sans-serif;
       font-size: 1em;
       font-weight: 400;
-      letter-spacing: 1px;
-      -webkit-font-smoothing: antialiased; }
+      letter-spacing: 1px; }
+    .about-copy .about-text .about-title {
+      font-weight: 700; }
+    .about-copy .about-text h3 {
+      width: 80%;
+      text-align: center; }
+      .about-copy .about-text h3 .about-quote {
+        font-weight: 400;
+        font-size: 2em; }
 
 *:focus {
   outline: 1px dotted black; }
@@ -1187,15 +1211,17 @@ section.ml-content:last-child {
     display: flex;
     justify-content: center;
     align-items: center; }
-  .lookbooks .lookbook a {
-    color: #ffffff;
-    text-decoration: none; }
-  .lookbooks .lookbook p {
-    font-size: 18vw;
-    text-transform: uppercase; }
-    @media screen and (min-width: 650px) {
-      .lookbooks .lookbook p {
-        font-size: 15vw; } }
+  .lookbooks .lookbook {
+    margin-bottom: 2px; }
+    .lookbooks .lookbook a {
+      color: #ffffff;
+      text-decoration: none; }
+    .lookbooks .lookbook p {
+      font-size: 18vw;
+      text-transform: uppercase; }
+      @media screen and (min-width: 650px) {
+        .lookbooks .lookbook p {
+          font-size: 15vw; } }
 
 #lookbook-title {
   display: flex;
@@ -1224,6 +1250,9 @@ section.ml-content:last-child {
   list-style-type: none;
   padding: 0;
   margin: 0; }
+  .collections a {
+    color: #ffffff;
+    text-decoration: none; }
   .collections .collection {
     background-position: center;
     background-repeat: no-repeat;
@@ -1231,14 +1260,19 @@ section.ml-content:last-child {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center; }
-    .collections .collection a {
-      color: #ffffff;
-      text-decoration: none;
+    align-items: center;
+    margin-bottom: 2px; }
+    .collections .collection .collection-main-title {
       font-size: 18vw;
       text-transform: uppercase; }
       @media screen and (min-width: 650px) {
-        .collections .collection a {
+        .collections .collection .collection-main-title {
           font-size: 15vw; } }
+  .collections .sold-out {
+    display: flex;
+    justify-content: center;
+    background-color: #f7f7f7; }
+    .collections .sold-out h2 {
+      color: #f49ac1; }
 
 /*# sourceMappingURL=style.css.map */

@@ -20,6 +20,10 @@
             margin-top: 0;
             -webkit-padding-start: 0px;
             margin-block-end: 0;
+        
+            @media screen and ( max-width: 601px ){
+                margin-top: 40px;
+            }            
             
 
             li {
@@ -31,7 +35,7 @@
             
                 a {
                     text-decoration: none;
-                    color: #000;
+                    // color: #000;
                     font-family: $font__main;
                     text-transform: uppercase;
                     font-size: 1em;
@@ -50,7 +54,7 @@
                 }
             }
 
-            li:hover a {color: hsl(0, 0%, 10%);}
+            // li:hover a {color: hsl(0, 0%, 10%);}
 
         }
     }
@@ -81,7 +85,13 @@
 
 }
 
+.current-menu-ancestor a {
+    color: #f49ac1;
+
+    &:hover { color: black }
+}
+
  .current-menu-item a{
-    border-bottom: 1px solid;
+    color: #f49ac1;
 }
 

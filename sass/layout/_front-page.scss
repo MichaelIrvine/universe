@@ -1,13 +1,15 @@
 .content-area {
-    // margin-top: 2.1em;
-
+    
     @media screen and ( max-width: 601px ){
-    margin-top: 2em;
+    margin-top: 4.5em;
     }
 
     .site-main {
         .entry-content {
             margin: 0 auto;
         }
+
     }
+
+
 }

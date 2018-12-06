@@ -31,12 +31,12 @@
 			<?php
 			the_custom_logo();?>
 			<div class="mobile-logo">
-
+				<a href="http://localhost:8888/universe/">
 				<?php
 				$mobileLogo = get_field('mobile_logo', 'option');
 				echo '<img src="' . $mobileLogo['url'] . '" alt="' . $mobileLogo . '" />';
 				?>
-
+				</a>
 			</div>
 			<?php
 			$universe_description = get_bloginfo( 'description', 'display' );

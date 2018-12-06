@@ -1,7 +1,14 @@
+
+
 .collections {
     list-style-type: none;
     padding: 0;
     margin: 0;
+
+    a {
+        color: #ffffff;
+        text-decoration: none;
+        }
 
 
     .collection {
@@ -12,21 +19,31 @@
         display: flex;  
         justify-content: center;
         align-items: center;
+        margin-bottom: 2px;
 
-
-        a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 18vw;
+        .collection-main-title {
+                    font-size: 18vw;
         text-transform: uppercase;
         
         @media screen and ( min-width: 650px ){
             font-size: 15vw;
         }
-
         }
+
     }
 
+    .sold-out {
+        display: flex;
+        justify-content: center;
+        background-color: #f7f7f7;
 
 
+        h2 {
+            color: #f49ac1;
+        }
+    }
 }
+
+
+
+

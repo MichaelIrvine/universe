@@ -1,20 +1,52 @@
 jQuery(document).ready(function($) {
-  /* --------------------
-# Main Navigation Sub Menu
------------------------- */
-  // -- Variables for menu navigation
+
+// ****
+// **** REMOVE THIS ONE STORE IS ACTIVE 
+
+const collectionLink = $('.collection-link');
+
+collectionLink.click(function(e){
+  e.preventDefault();
+});
+
+
+// **** 
+// **** REMOVE THIS ONE STORE IS ACTIVE ^^^
+// ****
+
+
+
+/* ----------------------------------------------------------------------------------------------------
+---------------------------------------- # Main Navigation Sub Menu -----------------------------------
+------------------------------------------------------------------------------------------------------- */
+
+// -- Variables for menu navigation
+
   const subMenu = $(".sub-menu");
   const subMenuButton = $(".menu-item-has-children a");
 
-    subMenuButton.click(function () {
+  subMenuButton.click(function (e) {
+        e.stopPropagation();
         subMenu.toggleClass("is-visible");
-      setTimeout(function () {
-        subMenu.removeClass("is-visible");
-      }, 5000);
-    });
+  });
 
-  // --- Check page URL -- Display Sub Menu if URL Matches
-  // --- Sub Menu stays visible on selected pages
+  function closeNavMenu() {
+    if (pageUrl.indexOf("lookbook") > -1 || pageUrl.indexOf("collections") > -1 || pageUrl.indexOf("product") > -1) {
+      return;
+    } else {
+      subMenu.removeClass('is-visible');
+    }
+  }
+
+  $(document.body).click(function(e){
+    closeNavMenu();
+  });
+
+
+// --- Check page URL -- Display Sub Menu if URL Matches
+// --- Sub Menu stays visible on selected pages
+
+
   const pageUrl = window.location.href;
   const menuBar = $('.grey-bar');
   const navParent = $('.menu-item-has-children');
@@ -28,35 +60,54 @@ jQuery(document).ready(function($) {
 
 
 
-/* --------------------
-# Missing Links - Contact reveal
------------------------- */
+/* ----------------------------------------------------------------------------------------------------
+-------------------- # Missing Links - Contact reveal -------------------------------------------------
+------------------------------------------------------------------------------------------------------- */
+
+
 const missingLink = $('h3.ml-toggle');
 const mlLinks     = $('a.ml-link');
 const contactBtn  = $('a.ml-link').first();
-  const contactForm = $('#wpcf7-f107-o1');
-console.log(contactBtn);
+const contactForm = $('#wpcf7-f107-o1');
+
 
 missingLink.click(function(e){
-  e.preventDefault();
+  e.stopPropagation();
   console.log('toastyyy');
-  mlLinks.toggleClass('active');
+  mlLinks.addClass('active');
   mlLinks.slideToggle('slow');
 });
 
+
 contactBtn.click(function(e){
     e.preventDefault();
-    mlLinks.toggleClass('active');
+    e.stopPropagation();
     mlLinks.toggleClass('text-color');
     contactForm.slideToggle('slow');
-    
+
 });
 
 
+function closeMissingLinks(e) {
+    mlLinks.slideUp('slow');
+    mlLinks.removeClass('active');
+    contactForm.slideUp('slow');
+    mlLinks.removeClass('text-color');
+}
+
+$(document.body).click(function(e){
+  closeMissingLinks();
 });
+
+contactForm.click(function(e) {
+    e.stopPropagation();
+});
+
+
 
 // End JQuery
 // ------------------------------------------------------
+});
 // ------------------------------------------------------
 
 

@@ -4,6 +4,9 @@
 
     .about-text {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 75%;
         padding: 2em;
 
@@ -16,7 +19,22 @@
         font-size: 1em;
         font-weight: 400;
         letter-spacing: 1px;
-        -webkit-font-smoothing: antialiased;
+        }
+
+        .about-title {
+            font-weight: 700;
+        }
+
+        h3 {
+            width: 80%;
+            text-align: center;
+
+            .about-quote {
+                font-weight: 400;
+                font-size: 2em;
+                
+                
+            }
         }
     }
 }

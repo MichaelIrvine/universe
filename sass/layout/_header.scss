@@ -9,6 +9,10 @@ header#masthead {
 
     .site-branding {
         display: flex;
+
+        @media screen and ( max-width: 700px ){
+            margin: 0.5em 2em;
+        }
     
         @media screen and ( max-width: 601px ){
         justify-content: center;
@@ -25,13 +29,15 @@ header#masthead {
 
         .mobile-logo {
             display: none;
-            // padding: 1em;
-            min-width: 50px;
+            min-width: 40px;
 
             @media screen and ( max-width: 700px ){
             display: block;
             }
 
+            @media screen and ( max-width: 601px ){
+            margin-top: 1em;
+            }
 
         }
     } // .site-branding
