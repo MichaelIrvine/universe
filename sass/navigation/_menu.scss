@@ -14,7 +14,6 @@
     .menu-primary-menu-container {
        
         ul.menu {
-            // reset
             list-style: none;
             display: flex;
             margin-top: 0;
@@ -35,7 +34,6 @@
             
                 a {
                     text-decoration: none;
-                    // color: #000;
                     font-family: $font__main;
                     text-transform: uppercase;
                     font-size: 1em;
@@ -53,8 +51,6 @@
 
                 }
             }
-
-            // li:hover a {color: hsl(0, 0%, 10%);}
 
         }
     }
