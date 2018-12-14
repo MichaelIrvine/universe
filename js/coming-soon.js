@@ -5,10 +5,6 @@ jQuery(document).ready(function($) {
   const pageUrl = window.location.href;
   const header  = $('.site-header, .grey-bar, .site-footer');
 
-  console.log(header);
-  
-
-
   if (pageUrl.indexOf("coming-soon") > -1 ) {
     header.css('display','none');    
   };

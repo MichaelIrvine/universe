@@ -16,25 +16,50 @@ collectionLink.click(function(e){
 
 
 
+
+
 /* ----------------------------------------------------------------------------------------------------
 ---------------------------------------- # Main Navigation Sub Menu -----------------------------------
 ------------------------------------------------------------------------------------------------------- */
 
 // -- Variables for menu navigation
-
+  const pageUrl = window.location.href;
   const subMenu = $(".sub-menu");
   const subMenuButton = $(".menu-item-has-children a");
+  const menuBar = $('.grey-bar');
+  const navParent = $('.menu-item-has-children');
+
+
+  // --- Check page URL -- Display Sub Menu if URL Matches
+// --- Sub Menu stays visible on selected pages
+
+  if (pageUrl.indexOf("lookbook") > -1 || pageUrl.indexOf("drops") > -1 || pageUrl.indexOf("product") > -1) {
+    menuBar.addClass('bar-color');
+    subMenu.addClass("is-visible");
+    navParent.addClass('active-background');
+    subMenuButton.off('click');
+  };
 
   subMenuButton.click(function (e) {
         e.stopPropagation();
-        subMenu.toggleClass("is-visible");
+        menuBar.addClass('grey-bar-height');
+        setTimeout(
+        function(){
+            subMenu.addClass("is-visible");
+        }, 500);
+        
   });
 
   function closeNavMenu() {
-    if (pageUrl.indexOf("lookbook") > -1 || pageUrl.indexOf("collections") > -1 || pageUrl.indexOf("product") > -1) {
+    if (pageUrl.indexOf("lookbook") > -1 || pageUrl.indexOf("drops") > -1 || pageUrl.indexOf("product") > -1) {
       return;
     } else {
       subMenu.removeClass('is-visible');
+      setTimeout(
+        function(){
+          menuBar.removeClass('grey-bar-height');
+        }, 500);
+      
     }
   }
 
@@ -42,21 +67,6 @@ collectionLink.click(function(e){
     closeNavMenu();
   });
 
-
-// --- Check page URL -- Display Sub Menu if URL Matches
-// --- Sub Menu stays visible on selected pages
-
-
-  const pageUrl = window.location.href;
-  const menuBar = $('.grey-bar');
-  const navParent = $('.menu-item-has-children');
-
-  if (pageUrl.indexOf("lookbook") > -1 || pageUrl.indexOf("collections") > -1 || pageUrl.indexOf("product") > -1) {
-    menuBar.addClass('bar-color');
-    subMenu.addClass("is-visible");
-    navParent.css('background-color','#f7f7f7');
-    subMenuButton.off('click');
-  };
 
 
 
@@ -104,6 +114,16 @@ contactForm.click(function(e) {
 });
 
 
+
+/* ----------------------------------------------------------------------------------------------------
+-------------------- # Drops - Sold Out slide down -------------------------------------------------
+------------------------------------------------------------------------------------------------------- */
+
+const dropBtn = $('.collection-link');
+
+dropBtn.click(function(){
+  $(this).next().slideDown('slow');
+})
 
 // End JQuery
 // ------------------------------------------------------

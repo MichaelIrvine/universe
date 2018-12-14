@@ -46,12 +46,18 @@ header#masthead {
 
 
 .grey-bar {
-    height: 58px;
+    min-height: 0px;
     background-color: #ffffff;
+    transition: all 0.5s ease-in-out;
+}
+
+.grey-bar-height {
+    min-height: 58px;
 }
 
 .bar-color {
     background-color: #f7f7f7;
+    min-height: 58px;
 
     @media screen and ( max-width: 601px ){
     background-color: #ffffff;

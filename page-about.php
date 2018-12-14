@@ -17,6 +17,20 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+
+			<section class="about-image-top">
+			<?php
+				if (function_exists('get_field')){
+					if (get_field('about_image_top')){ 
+						$aboutImageTop = get_field('about_image_top');
+						?>
+						<img src="<?php echo $aboutImageTop['url']; ?>" alt="<?php echo $aboutImageTop['alt']; ?>" />
+					<?php
+					}
+				}
+				?>
+			</section>
+
 			<section class="about-copy">
 			<?php
 				if (function_exists('get_field')){
@@ -28,13 +42,13 @@ get_header();
 				?>
 			</section>
 
-			<section class="about-image">
+			<section class="about-image-bottom">
 			<?php
 				if (function_exists('get_field')){
-					if (get_field('about_image')){ 
-						$aboutImage = get_field('about_image');
+					if (get_field('about_image_bottom')){ 
+						$aboutImageBottom = get_field('about_image_bottom');
 						?>
-						<img src="<?php echo $aboutImage['url']; ?>" alt="<?php echo $aboutImage['alt']; ?>" />
+						<img src="<?php echo $aboutImageBottom['url']; ?>" alt="<?php echo $aboutImageBottom['alt']; ?>" />
 					<?php
 					}
 				}

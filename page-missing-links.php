@@ -17,15 +17,15 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<div class="ml-title">
+			<!-- <div class="ml-title">
 				<h1>Missing Links</h1>
-			</div>
-			<?php
+			</div> -->
+			<!-- <?php
 			wp_nav_menu( array(
 				'theme_location' => 'missing-links',
 				'menu_id'        => 'missing-links',
 			) );
-			?>
+			?> -->
 
 			<?php
 			if( have_rows('missing_links_content') ):
@@ -39,11 +39,11 @@ get_header();
 					<section class="ml-content">
 						<div class="ml-content--inner">
 							
-							<h2>
+							<h3>
 							<?php
 							echo $title;
 							?>
-							</h2>
+							</h3>
 							<?php
 							echo $content; ?>
 						</div>	

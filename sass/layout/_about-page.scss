@@ -1,3 +1,12 @@
+.about-image-top {
+    width: 60%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 601px){
+        width: 80%;
+    }
+}
+
 .about-copy {
     display: flex;
     justify-content: center;
@@ -5,9 +14,7 @@
     .about-text {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 75%;
+        width: 65%;
         padding: 2em;
 
         @media screen and ( max-width: 520px ){
@@ -17,21 +24,30 @@
         p {
         font-family: $font__main;
         font-size: 1em;
-        font-weight: 400;
+        font-weight: 300;
         letter-spacing: 1px;
         }
 
         .about-title {
             font-weight: 700;
+            color: black;
         }
 
         h3 {
-            width: 80%;
+            width: 60%;
             text-align: center;
+            margin: 8% auto;
+
 
             .about-quote {
                 font-weight: 400;
                 font-size: 2em;
+                color: black;
+
+                @media screen and (max-width: 520px){
+                    font-size: 1.7em;
+                }
+
                 
                 
             }

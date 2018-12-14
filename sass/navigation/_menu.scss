@@ -29,8 +29,6 @@
                 padding: 1em;
                 width: auto;
 
-
-                &:hover {background-color: hsl(0, 0%, 97%);}
             
                 a {
                     text-decoration: none;
@@ -40,6 +38,7 @@
                     font-weight: 300;
                     letter-spacing: 2px;
 
+                    &:hover {color: #f49ac1;}
 
                     @media screen and ( max-width: 601px ){
                     font-size: 1em;
@@ -71,23 +70,32 @@
         list-style: none;
         position: absolute;
         left: 0;
-        display: none;
+        display: flex;
         margin-top: 16px;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
     }
 
     .is-visible {
-        display: flex;
+        opacity: 1;
     }
 
 }
 
-.current-menu-ancestor a {
-    color: #f49ac1;
+// --- Background color for shop/lookbook pages
+.active-background {
+    background-color: #f7f7f7;
 
-    &:hover { color: black }
+    @media screen and ( max-width: 601px ){
+        background-color: #ffffff;
+    }
 }
 
- .current-menu-item a{
-    color: #f49ac1;
-}
 
+.sub-menu {
+
+    .current_page_item a{
+        color: #f49ac1;
+    }
+
+}

@@ -5,8 +5,8 @@
 .ml-title {
     display: flex;
     justify-content: center;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    // border-top: 1px solid black;
+    // border-bottom: 1px solid black;
 
     h1 {
         font-family: $font__main;
@@ -19,18 +19,32 @@
 .ml-content {
     display: flex;
     justify-content: center;
-    // background-color: #f3eee9;
-    justify-content: center;
 
 
     .ml-content--inner{
         display: flex;
         flex-direction: column;
-        // align-items: center;
         width: 60%;
-        // border: 1px solid #171717;
-        padding: 50px;
-        border-bottom: 1px solid #171717;
+
+        a {
+            text-decoration: none;
+            color: #f49ac1;
+
+            &:hover { color: black;}
+        }
+
+        h3 {
+            text-transform: uppercase;
+        }
+
+        h4 {
+            text-transform: uppercase;
+            font-weight: 100;
+        }
+        
+        p {
+            font-weight: 100;
+        }
 
 
     }
@@ -39,16 +53,9 @@
         margin-bottom: 50px;
     }
 
-    h2:after {
-    content: " ";
-    display: block;
-    height: 1px;
-    width: 70%;
-    background-color: #171717;
-}
 }
 
 section.ml-content:last-child {
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
     margin-bottom: 50px;
 }

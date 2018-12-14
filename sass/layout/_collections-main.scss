@@ -33,12 +33,11 @@
     }
 
     .sold-out {
-        display: flex;
+        display: none;
         justify-content: center;
-        background-color: #f7f7f7;
-
-
+        
         h2 {
+            text-align: center;
             color: #f49ac1;
         }
     }
