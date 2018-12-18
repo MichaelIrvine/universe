@@ -18,13 +18,13 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<section class="about-image-top">
+			<section class="about-image-top-wrapper">
 			<?php
 				if (function_exists('get_field')){
 					if (get_field('about_image_top')){ 
 						$aboutImageTop = get_field('about_image_top');
 						?>
-						<img src="<?php echo $aboutImageTop['url']; ?>" alt="<?php echo $aboutImageTop['alt']; ?>" />
+						<div class="about-image-top" style="background-image: url('<?php echo $aboutImageTop;?>')"></div>
 					<?php
 					}
 				}

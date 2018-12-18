@@ -225,6 +225,21 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
+
+/**
+ * Custom Logo
+ */
+if( function_exists('acf_add_options_page') ) {
+    $args = array(
+          'page_title' => 'Custom Logo',
+		  'menu_title' => 'Custom Logo',
+		  'menu_slug'  => 'custom_logo',
+          'icon_url' => 'dashicons-format-image'
+          //other args
+      );
+    acf_add_options_page($args);
+}
+
 /**
  * Mobile Logo
  */
@@ -239,6 +254,7 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_page($args);
 
 }
+
 
 /**
  * Lookbook CPT ------

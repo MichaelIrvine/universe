@@ -29,6 +29,9 @@
                 padding: 1em;
                 width: auto;
 
+                @media screen and (max-width:400px){
+                    padding: 0.8em;
+                }
             
                 a {
                     text-decoration: none;
@@ -81,17 +84,6 @@
     }
 
 }
-
-// --- Background color for shop/lookbook pages
-.active-background {
-    background-color: #f7f7f7;
-
-    @media screen and ( max-width: 601px ){
-        background-color: #ffffff;
-    }
-}
-
-
 .sub-menu {
 
     .current_page_item a{
@@ -99,3 +91,15 @@
     }
 
 }
+
+// --- Background color for shop/lookbook pages
+// .active-background {
+//     background-color: #f7f7f7;
+
+//     @media screen and ( max-width: 601px ){
+//         background-color: #ffffff;
+//     }
+// }
+
+
+

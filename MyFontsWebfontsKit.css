@@ -1,0 +1,28 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3688328, 2018-12-15T12:59:57-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: TradeGothicLTStd-BoldObl by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/trade-gothic/bold-oblique-63882/
+ * Copyright: Copyright 2014 Monotype GmbH. All rights reserved.
+ * Licensed pageviews: 250,000
+ * 
+ * 
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3688328
+ * 
+ * © 2018 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/384788");
+
+  
+@font-face {font-family: 'TradeGothicLTStd-BoldObl';src: url('webfonts/384788_0_0.eot');src: url('webfonts/384788_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/384788_0_0.woff2') format('woff2'),url('webfonts/384788_0_0.woff') format('woff'),url('webfonts/384788_0_0.ttf') format('truetype');}
+ 

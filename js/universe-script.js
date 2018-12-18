@@ -36,7 +36,6 @@ collectionLink.click(function(e){
   if (pageUrl.indexOf("lookbook") > -1 || pageUrl.indexOf("drops") > -1 || pageUrl.indexOf("product") > -1) {
     menuBar.addClass('bar-color');
     subMenu.addClass("is-visible");
-    navParent.addClass('active-background');
     subMenuButton.off('click');
   };
 
@@ -58,12 +57,12 @@ collectionLink.click(function(e){
       setTimeout(
         function(){
           menuBar.removeClass('grey-bar-height');
-        }, 500);
+        }, 300);
       
     }
   }
 
-  $(document.body).click(function(e){
+  $(document.body).on('click touch', function(e){
     closeNavMenu();
   });
 
@@ -105,7 +104,7 @@ function closeMissingLinks(e) {
     mlLinks.removeClass('text-color');
 }
 
-$(document.body).click(function(e){
+$(document.body).on('click touch', function(e){
   closeMissingLinks();
 });
 
@@ -124,6 +123,20 @@ const dropBtn = $('.collection-link');
 dropBtn.click(function(){
   $(this).next().slideDown('slow');
 })
+
+
+/* ----------------------------------------------------------------------------------------------------
+-------------------- # Missing Links Menu Hide -------------------------------------------------
+------------------------------------------------------------------------------------------------------- */
+
+function hideMissingLink() {
+  if (pageUrl.indexOf("missing-links") > -1 ) {
+      missingLink.css('display', 'none');
+  }
+}
+
+hideMissingLink();
+
 
 // End JQuery
 // ------------------------------------------------------

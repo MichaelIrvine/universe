@@ -29,7 +29,15 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
-			the_custom_logo();?>
+			// the_custom_logo();?>
+			<div class="custom-logo">
+				<a href="http://localhost:8888/universe/">
+				<?php
+				$customLogo = get_field('custom_logo', 'option');
+				echo file_get_contents( $customLogo );
+				?>
+				</a>
+			</div>
 			<div class="mobile-logo">
 				<a href="http://localhost:8888/universe/">
 				<?php

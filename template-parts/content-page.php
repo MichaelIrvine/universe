@@ -26,9 +26,7 @@
 					<?php
 					$image = get_field('new_post_image');
 					?>
-
-					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
+					<div class="post-image-background" style="background-image: url('<?php echo $image;?>')"></div>
 				</section>
 			<?php 
 			}

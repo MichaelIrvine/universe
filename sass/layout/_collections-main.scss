@@ -21,9 +21,22 @@
         align-items: center;
         margin-bottom: 2px;
 
+        @media screen and (max-width: 768px){
+            height: 75vh;
+        }
+
+        @media screen and (max-width: 601px){
+            height: 60vh;
+        }
+
+        @media screen and (max-width: 400px){
+            height: 40vh;
+        }
+
         .collection-main-title {
-                    font-size: 18vw;
-        text-transform: uppercase;
+            font-family: $font__custom;
+            font-size: 17vw;
+            text-transform: uppercase;
         
         @media screen and ( min-width: 650px ){
             font-size: 15vw;
@@ -39,6 +52,7 @@
         h2 {
             text-align: center;
             color: #f49ac1;
+            font-family: $font__custom;
         }
     }
 }

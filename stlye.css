@@ -41,10 +41,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@font-face {
-  font-family: 'TradeGothicLTCom-BdCn20Obl';
-  src: url("webfonts/3847F1_0_0.eot");
-  src: url("webfonts/3847F1_0_0.eot?#iefix") format("embedded-opentype"), url("webfonts/3847F1_0_0.woff2") format("woff2"), url("webfonts/3847F1_0_0.woff") format("woff"), url("webfonts/3847F1_0_0.ttf") format("truetype"); }
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -508,26 +504,17 @@ table {
             width: auto;
             height: 50px;
             cursor: pointer;
-            font-family: "TradeGothicLTCom-BdCn20Obl";
+            font-style: italic;
             color: white;
             font-size: 1.25em;
             font-weight: 100;
-            letter-spacing: 1px;
-            padding-bottom: 0.5em; }
-            .newsletter #text-3 .textwidget form p #newsletter-submit:focus {
-              outline: none; }
-
-div.wpcf7-mail-sent-ok,
-div.wpcf7-response-output {
-  border: 0px;
-  padding: 0px;
-  font-family: "TradeGothicLTCom-BdCn20Obl"; }
+            padding-bottom: 0.6em; }
 
 .post-embed-video .embed-container {
   position: relative;
   padding-bottom: 56.25%;
   overflow: hidden;
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   margin: 0 auto; }
 .post-embed-video .embed-container iframe,
@@ -685,7 +672,7 @@ textarea {
 a {
   color: #000000; }
   a:focus {
-    outline: none; }
+    outline: thin dotted; }
   a:hover, a:active {
     outline: 0; }
 
@@ -746,6 +733,12 @@ a {
     opacity: 0; }
   .menu-item-has-children .is-visible {
     opacity: 1; }
+
+.active-background {
+  background-color: #f7f7f7; }
+  @media screen and (max-width: 601px) {
+    .active-background {
+      background-color: #ffffff; } }
 
 .sub-menu .current_page_item a {
   color: #f49ac1; }
@@ -1048,17 +1041,12 @@ header#masthead {
     @media screen and (max-width: 601px) {
       header#masthead .site-branding {
         justify-content: center; } }
-    header#masthead .site-branding .custom-logo {
+    header#masthead .site-branding .custom-logo-link {
       width: 175px;
-      padding-left: 1em; }
+      padding-left: 2em; }
       @media screen and (max-width: 700px) {
-        header#masthead .site-branding .custom-logo {
+        header#masthead .site-branding .custom-logo-link {
           display: none; } }
-      header#masthead .site-branding .custom-logo svg {
-        width: 175px;
-        height: 55px; }
-        header#masthead .site-branding .custom-logo svg:hover #Layer_1_1_ {
-          fill: #f49ac1; }
     header#masthead .site-branding .mobile-logo {
       display: none;
       min-width: 40px; }
@@ -1149,8 +1137,9 @@ a.ml-link:hover {
     justify-content: center;
     margin: 0 auto; }
     .footer-bottom-container .copyright-info p {
-      color: #ffffff;
+      color: #FFF;
       font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
       font-size: 0.5em;
       font-style: italic;
       letter-spacing: 1px;
@@ -1162,25 +1151,12 @@ a.ml-link:hover {
 .content-area .site-main .entry-content {
   margin: 0 auto; }
 
-.post-image .post-image-background {
-  background-size: cover;
-  background-position: center;
-  height: 100vh; }
-
-.about-image-top-wrapper .about-image-top {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; }
-  @media screen and (max-width: 768px) {
-    .about-image-top-wrapper .about-image-top {
-      height: 75vh; } }
+.about-image-top {
+  width: 60%;
+  margin: 0 auto; }
   @media screen and (max-width: 601px) {
-    .about-image-top-wrapper .about-image-top {
-      height: 60vh; } }
-  @media screen and (max-width: 400px) {
-    .about-image-top-wrapper .about-image-top {
-      height: 40vh; } }
+    .about-image-top {
+      width: 80%; } }
 
 .about-copy {
   display: flex;
@@ -1197,8 +1173,7 @@ a.ml-link:hover {
       font-family: "Oswald", sans-serif;
       font-size: 1em;
       font-weight: 300;
-      letter-spacing: 1px;
-      color: black; }
+      letter-spacing: 1px; }
     .about-copy .about-text .about-title {
       font-weight: 700;
       color: black; }
@@ -1233,7 +1208,7 @@ a.ml-link:hover {
     width: 60%; }
     .ml-content .ml-content--inner a {
       text-decoration: none;
-      color: black; }
+      color: #f49ac1; }
       .ml-content .ml-content--inner a:hover {
         color: black; }
     .ml-content .ml-content--inner h3 {
@@ -1262,57 +1237,33 @@ section.ml-content:last-child {
     display: flex;
     justify-content: center;
     align-items: center; }
-    @media screen and (max-width: 768px) {
-      .lookbooks .lookbook-wrapper {
-        height: 75vh; } }
-    @media screen and (max-width: 601px) {
-      .lookbooks .lookbook-wrapper {
-        height: 60vh; } }
-    @media screen and (max-width: 400px) {
-      .lookbooks .lookbook-wrapper {
-        height: 40vh; } }
   .lookbooks .lookbook {
     margin-bottom: 2px; }
     .lookbooks .lookbook a {
       color: #ffffff;
       text-decoration: none; }
     .lookbooks .lookbook p {
-      font-size: 17vw;
-      text-transform: uppercase;
-      font-family: "TradeGothicLTCom-BdCn20Obl"; }
+      font-size: 18vw;
+      text-transform: uppercase; }
       @media screen and (min-width: 650px) {
         .lookbooks .lookbook p {
           font-size: 15vw; } }
 
-.single-lookbooks .lookbook-images li {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  margin-top: 2px; }
-  @media screen and (max-width: 768px) {
-    .single-lookbooks .lookbook-images li {
-      height: 75vh; } }
-  @media screen and (max-width: 601px) {
-    .single-lookbooks .lookbook-images li {
-      height: 60vh; } }
-  @media screen and (max-width: 400px) {
-    .single-lookbooks .lookbook-images li {
-      height: 40vh; } }
-.single-lookbooks #lookbook-title {
+#lookbook-title {
   display: flex;
   justify-content: center;
   margin-bottom: 2px;
   width: 100%;
   background-color: #ffffff;
   top: 0; }
-  .single-lookbooks #lookbook-title h2 {
+  #lookbook-title h2 {
     font-size: 2em;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0.2em 0; }
-.single-lookbooks #lookbook-title {
+
+#lookbook-title {
   position: sticky;
   top: -4px; }
 
@@ -1337,18 +1288,8 @@ section.ml-content:last-child {
     justify-content: center;
     align-items: center;
     margin-bottom: 2px; }
-    @media screen and (max-width: 768px) {
-      .collections .collection {
-        height: 75vh; } }
-    @media screen and (max-width: 601px) {
-      .collections .collection {
-        height: 60vh; } }
-    @media screen and (max-width: 400px) {
-      .collections .collection {
-        height: 40vh; } }
     .collections .collection .collection-main-title {
-      font-family: "TradeGothicLTCom-BdCn20Obl";
-      font-size: 17vw;
+      font-size: 18vw;
       text-transform: uppercase; }
       @media screen and (min-width: 650px) {
         .collections .collection .collection-main-title {
@@ -1358,7 +1299,6 @@ section.ml-content:last-child {
     justify-content: center; }
     .collections .sold-out h2 {
       text-align: center;
-      color: #f49ac1;
-      font-family: "TradeGothicLTCom-BdCn20Obl"; }
+      color: #f49ac1; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=stlye.css.map */

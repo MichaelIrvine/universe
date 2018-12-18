@@ -15,6 +15,18 @@
         justify-content: center;
         align-items: center;
 
+        @media screen and (max-width: 768px){
+            height: 75vh;
+        }
+
+        @media screen and (max-width: 601px){
+            height: 60vh;
+        }
+
+        @media screen and (max-width: 400px){
+            height: 40vh;
+        }
+
     }
 
     .lookbook {
@@ -26,8 +38,9 @@
         }
 
         p {
-        font-size: 18vw;
+        font-size: 17vw;
         text-transform: uppercase;
+        font-family: $font__custom;
         
         @media screen and ( min-width: 650px ){
             font-size: 15vw;
@@ -44,6 +57,29 @@
 
 // ---- Single Lookbook Pages -----
 
+.single-lookbooks {
+
+    .lookbook-images {
+        li {
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin-top: 2px;
+
+        @media screen and (max-width: 768px){
+            height: 75vh;
+        }
+
+        @media screen and (max-width: 601px){
+            height: 60vh;
+        }
+
+        @media screen and (max-width: 400px){
+            height: 40vh;
+        }
+        }
+    }
 
 #lookbook-title {
     display: flex;
@@ -67,4 +103,6 @@
 #lookbook-title {
     position: sticky;
     top: -4px;
+}
+
 }

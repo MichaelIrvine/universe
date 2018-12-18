@@ -1,9 +1,22 @@
-.about-image-top {
-    width: 60%;
-    margin: 0 auto;
+.about-image-top-wrapper {
+    
+    .about-image-top{
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
 
-    @media screen and (max-width: 601px){
-        width: 80%;
+        @media screen and (max-width: 768px){
+            height: 75vh;
+        }
+
+        @media screen and (max-width: 601px){
+            height: 60vh;
+        }
+
+        @media screen and (max-width: 400px){
+            height: 40vh;
+        }
     }
 }
 
@@ -26,6 +39,7 @@
         font-size: 1em;
         font-weight: 300;
         letter-spacing: 1px;
+        color: black;
         }
 
         .about-title {
